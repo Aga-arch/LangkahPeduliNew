@@ -717,3 +717,4 @@ in SYSTEMPATH\Database\BaseConnection.php on line 465.
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+DEBUG - 2025-11-03 14:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
