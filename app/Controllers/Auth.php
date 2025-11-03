@@ -6,14 +6,42 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function processLogin()
+    {
+        $session = session();
+        $model = new UserModel();
+
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $user = $model->where('email', $email)->first();
+
+        if ($user && password_verify($password, $user['password'])) {
+            $session->set([
+                'user_id' => $user['id'],
+                'username' => $user['username'],
+                'logged_in' => true
+            ]);
+            return redirect()->to(base_url('dashboard'));
+        } else {
+            $session->setFlashdata('error', 'Email atau password salah!');
+            return redirect()->to(base_url('login'));
+        }
+    }
+
     public function register()
     {
         return view('register');
     }
 
-    public function saveRegister()
+    public function processRegister()
     {
-        $userModel = new UserModel();
+        $model = new UserModel();
 
         $data = [
             'username' => $this->request->getPost('username'),
@@ -21,34 +49,13 @@ class Auth extends BaseController
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
 
-        $userModel->insert($data);
-        return redirect()->to('/login')->with('success', 'Pendaftaran berhasil. Silakan login.');
-    }
-
-    public function login()
-    {
-        return view('login');
-    }
-
-    public function authLogin()
-    {
-        $userModel = new UserModel();
-        $user = $userModel->where('username', $this->request->getPost('username'))->first();
-
-        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            session()->set([
-                'username' => $user['username'],
-                'logged_in' => true
-            ]);
-            return redirect()->to('/dashboard');
-        } else {
-            return redirect()->back()->with('error', 'Username atau password salah.');
-        }
+        $model->insert($data);
+        return redirect()->to(base_url('login'))->with('success', 'Pendaftaran berhasil, silakan login!');
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to(base_url('login'));
     }
 }
