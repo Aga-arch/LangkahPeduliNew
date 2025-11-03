@@ -1,52 +1,60 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Langkah Peduli - E-Learning</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Langkah Peduli</a>
-            <div>
-                <a href="#" class="btn btn-outline-light btn-sm">Masuk</a>
-            </div>
+<?= $this->extend('layouts/layout') ?>
+<?= $this->section('content') ?>
+
+<!-- Hero Section -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="fw-bold display-5 text-primary mb-3">Langkah Peduli</h1>
+    <p class="lead text-secondary mb-4">
+      Platform e-learning yang membantu kamu melangkah menuju perubahan melalui pembelajaran dan kepedulian sosial.
+    </p>
+    <a href="<?= base_url('kursus') ?>" class="btn btn-primary btn-lg me-2">Mulai Belajar</a>
+    <a href="<?= base_url('login') ?>" class="btn btn-outline-primary btn-lg">Masuk</a>
+  </div>
+</section>
+
+<!-- Fitur Utama -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Kenapa Pilih Langkah Peduli?</h2>
+      <p class="text-muted">Belajar dan berbuat baik bisa berjalan beriringan.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-journal-text text-primary fs-1 mb-3"></i>
+            <h5 class="card-title fw-bold">Materi Interaktif</h5>
+            <p class="text-muted">Pelajari topik menarik dengan video, kuis, dan tugas praktis yang membuat belajar jadi seru.</p>
+          </div>
         </div>
-    </nav>
-
-    <section class="container text-center mt-5">
-        <h1 class="fw-bold text-success">Selamat Datang di Langkah Peduli</h1>
-        <p class="lead mt-3">Platform E-Learning untuk belajar dan berbagi pengetahuan di mana saja dan kapan saja.</p>
-        <a href="#" class="btn btn-success mt-3">Mulai Belajar</a>
-    </section>
-
-    <section class="container mt-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm p-3">
-                    <h5 class="fw-bold">Materi Lengkap</h5>
-                    <p>Akses berbagai topik pembelajaran dari dasar hingga tingkat lanjut.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm p-3">
-                    <h5 class="fw-bold">Belajar Fleksibel</h5>
-                    <p>Pelajari materi sesuai waktu dan kecepatanmu sendiri.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm p-3">
-                    <h5 class="fw-bold">Komunitas Aktif</h5>
-                    <p>Bergabung dengan komunitas pelajar dan berbagi pengalaman belajar.</p>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-people text-primary fs-1 mb-3"></i>
+            <h5 class="card-title fw-bold">Komunitas Peduli</h5>
+            <p class="text-muted">Bergabung dengan komunitas yang aktif dalam kegiatan sosial dan pengembangan diri.</p>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-lightbulb text-primary fs-1 mb-3"></i>
+            <h5 class="card-title fw-bold">Belajar Berdampak</h5>
+            <p class="text-muted">Setiap langkah belajar kamu berkontribusi untuk membantu sesama dan lingkungan sekitar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="bg-success text-white text-center py-3 mt-5">
-        <p class="mb-0">© 2025 Langkah Peduli | Belajar Bersama, Peduli Bersama</p>
-    </footer>
-</body>
-</html>
+<!-- Footer -->
+<footer class="py-4 bg-primary text-white text-center">
+  <p class="mb-0">&copy; <?= date('Y') ?> Langkah Peduli — Bersama Menciptakan Perubahan</p>
+</footer>
+
+<?= $this->endSection() ?>
