@@ -18,16 +18,20 @@ $routes->get('logout', 'Auth::logout');
 
 // Dashboard
 $routes->get('dashboard', 'Dashboard::index');
-// Quiz
-$routes->get('quiz', 'Quiz::index');
-$routes->get('quiz/start', 'Quiz::start');
-$routes->post('quiz/submit', 'Quiz::submit');
-$routes->get('quiz/review/(:num)', 'Quiz::review/$1');
+$routes->get('/dashboard/quiz', 'Quiz::index');
+$routes->get('/dashboard/quiz/start', 'Quiz::start');
+$routes->post('/dashboard/quiz/submit', 'Quiz::submit');
 
-// Forum
-$routes->get('forum', 'Forum::index');
-$routes->get('forum/topic/(:num)', 'Forum::topic/$1');
-$routes->post('forum/comment', 'Forum::addComment');
+$routes->get('/penghargaan', 'Penghargaan::index');
+$routes->get('/dashboard/penghargaan', 'Penghargaan::index');
 
-// Penghargaan
-$routes->get('penghargaan', 'Penghargaan::index');
+$routes->get('/dashboard/forum', 'Forum::index');
+$routes->get('/dashboard/forum/topic/(:num)', 'Forum::topic/$1');
+$routes->post('/dashboard/forum/addComment', 'Forum::addComment');
+
+$routes->get('/dashboard/profil', 'Profil::index');
+
+
+
+
+

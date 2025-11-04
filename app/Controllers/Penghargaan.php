@@ -2,20 +2,32 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
+
 class Penghargaan extends BaseController
 {
     public function index()
     {
+        // Cek login (opsional, boleh dihapus kalau belum pakai login)
         if (!session()->get('logged_in')) {
             return redirect()->to(base_url('login'))->with('error', 'Silakan login terlebih dahulu.');
         }
 
-        // Dummy penghargaan
+        // Data dummy penghargaan
         $awards = [
-            ['title' => 'Juara Quiz Bulanan', 'date' => '2025-11-01'],
-            ['title' => 'Forum Teraktif', 'date' => '2025-10-25'],
+            [
+                'nama' => 'Juara Quiz Bulanan',
+                'tanggal' => '2025-11-01',
+                'keterangan' => 'Diberikan kepada pengguna dengan skor tertinggi di quiz bulan November.'
+            ],
+            [
+                'nama' => 'Forum Teraktif',
+                'tanggal' => '2025-10-25',
+                'keterangan' => 'Diberikan kepada pengguna paling aktif berdiskusi di forum komunitas.'
+            ]
         ];
 
-        return view('penghargaan_index', ['awards' => $awards]);
+        // Arahkan ke view di folder dashboard
+        return view('dashboard/penghargaan', ['awards' => $awards]);
     }
 }
