@@ -11,8 +11,8 @@
         body {
             font-family: "Poppins", sans-serif;
             background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-            margin: 0;
-            color: #333;
+            margin:0;
+            color:#333;
         }
 
         /* ===== HEADER ===== */
@@ -31,20 +31,21 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            font-size: 22px;
-            font-weight: 600;
-        }
+        header h1 { font-size: 22px; font-weight: 600; }
+        header a { color: white; text-decoration: none; font-weight: 500; margin-left: 15px; }
+        header a:hover { text-decoration: underline; }
 
-        header a {
+        /* Logout button in header */
+        .btn-logout {
+            background: #ff4d4f;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
             color: white;
-            text-decoration: none;
             font-weight: 500;
+            transition: 0.3s;
         }
-
-        header a:hover {
-            text-decoration: underline;
-        }
+        .btn-logout:hover { background: #d9363e; }
 
         /* ===== SIDEBAR ===== */
         .sidebar {
@@ -89,11 +90,7 @@
             z-index: 90;
         }
 
-        .search-bar {
-            width: 50%;
-            position: relative;
-        }
-
+        .search-bar { width: 50%; position: relative; }
         .search-bar input {
             width: 100%;
             padding: 10px 40px 10px 15px;
@@ -103,44 +100,26 @@
             transition: 0.3s;
             font-size: 15px;
         }
-
-        .search-bar input:focus {
-            box-shadow: 0 0 8px rgba(0,120,215,0.3);
-        }
-
-        .search-bar i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #0078d7;
-        }
+        .search-bar input:focus { box-shadow: 0 0 8px rgba(0,120,215,0.3); }
+        .search-bar i { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #0078d7; }
 
         /* ===== CONTENT ===== */
-        .content {
-            margin-left: 240px;
-            margin-top: 130px;
-            padding: 20px;
-        }
+        .content { margin-left: 240px; margin-top: 130px; padding: 20px; }
+        .card { border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.12); }
 
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1><i class="bi bi-lightbulb-fill me-2"></i>Langkah Peduli Dashboard</h1>
-    <a href="<?= base_url('profil') ?>"><i class="bi bi-person-circle me-1"></i> Cek Profil</a>
+    <div>
+        <h1><i class="bi bi-lightbulb-fill me-2"></i>Langkah Peduli Dashboard</h1>
+    </div>
+    <div>
+        <a href="<?= base_url('profil') ?>"><i class="bi bi-person-circle me-1"></i> <?= session()->get('username') ?></a>
+        <a href="<?= base_url('logout') ?>" class="btn-logout ms-2"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
+    </div>
 </header>
 
 <div class="sidebar">
@@ -155,15 +134,11 @@
         <i class="bi bi-search"></i>
     </form>
 </div>
-<li class="nav-item mb-2">
-    <a href="/penghargaan" class="nav-link text-white">
-        <i class="bi bi-trophy-fill me-2"></i> Penghargaan
-    </a>
-</li>
 
 <div class="content">
     <?= $this->renderSection('content') ?>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
