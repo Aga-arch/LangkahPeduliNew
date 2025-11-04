@@ -2,33 +2,16 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-
 class Dashboard extends BaseController
 {
     public function index()
     {
-        $data['title'] = 'Dashboard';
-        return view('dashboard/index', $data);
-    }
+        if (!session()->get('logged_in')) {
+            return redirect()->to(base_url('login'))->with('error', 'Silakan login terlebih dahulu.');
+        }
 
-    public function penghargaan()
-    {
-        return view('dashboard/penghargaan');
-    }
-
-    public function quiz()
-    {
-        return view('dashboard/quiz');
-    }
-
-    public function forum()
-    {
-        return view('dashboard/forum');
-    }
-
-    public function materi()
-    {
-        return view('dashboard/materi');
+        return view('dashboard', [
+            'username' => session()->get('username')
+        ]);
     }
 }
