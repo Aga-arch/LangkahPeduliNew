@@ -9,4 +9,5 @@ class UserModel extends Model
     protected $table = 'users';
     protected $primaryKey = 'id';
     protected $allowedFields = ['username', 'email', 'password', 'role'];
+    protected $returnType = 'array'; // pastikan data dikembalikan dalam bentuk array
 }

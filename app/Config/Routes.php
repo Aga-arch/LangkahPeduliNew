@@ -44,6 +44,13 @@ $routes->group('dashboard', function ($routes) {
     */
     $routes->get('admin', 'Dashboard::admin');
 
+    $routes->get('admin/kelola-akun', 'AdminController::kelolaAkun');
+    $routes->get('admin/detail-akun/(:num)', 'AdminController::detailAkun/$1');
+    $routes->get('admin/edit-akun/(:num)', 'AdminController::editAkun/$1');
+    $routes->post('admin/update-akun/(:num)', 'AdminController::updateAkun/$1');
+    $routes->get('admin/delete-akun/(:num)', 'AdminController::deleteAkun/$1');
+
+
     /*
     |----------------------------------------------------------------------
     | Pengajar
