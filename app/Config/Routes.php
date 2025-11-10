@@ -2,15 +2,13 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/**
- * @var RouteCollection $routes
- */
+/** @var RouteCollection $routes */
 $routes->get('/', 'Home::index');
 
 /*
-|----------------------------------------------------------------------
+|--------------------------------------------------------------------------
 | Auth Routes
-|----------------------------------------------------------------------
+|--------------------------------------------------------------------------
 */
 $routes->group('', function ($routes) {
     // Register
@@ -24,14 +22,21 @@ $routes->group('', function ($routes) {
 });
 
 /*
-|----------------------------------------------------------------------
-| Dashboard Routes
-|----------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| Dashboard Routes (Role-Agnostic & Admin)
+|--------------------------------------------------------------------------
 */
 $routes->group('dashboard', function ($routes) {
     // Halaman utama dashboard
     $routes->get('/', 'Dashboard::index');
-    $routes->get('admin', 'Dashboard::admin'); // khusus admin
+
+    // Admin
+    $routes->get('admin', 'Dashboard::admin');
+
+    // Pengajar
+    $routes->get('pengajar', 'Dashboard::pengajar');
+    $routes->get('jadwal', 'Dashboard::jadwal');   // kelola jadwal pengajar
+    $routes->get('materi', 'Dashboard::materi');   // kelola materi pengajar
 
     // Quiz
     $routes->get('quiz', 'Quiz::index');
@@ -43,7 +48,7 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('forum/topic/(:num)', 'Forum::topic/$1');
     $routes->post('forum/addComment', 'Forum::addComment');
 
-    // Penghargaan
+    // Penghargaan (hanya dashboard)
     $routes->get('penghargaan', 'Penghargaan::index');
 
     // Profil
@@ -51,8 +56,8 @@ $routes->group('dashboard', function ($routes) {
 });
 
 /*
-|----------------------------------------------------------------------
-| Other Routes
-|----------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
 */
 $routes->get('penghargaan', 'Penghargaan::index');
