@@ -13,83 +13,63 @@ $routes->get('/', 'Home::index');
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes
+| Authentication (Login & Register)
 |--------------------------------------------------------------------------
 */
 $routes->group('', function ($routes) {
-    // Register
     $routes->get('register', 'Auth::register');
     $routes->post('register/save', 'Auth::saveRegister');
 
-    // Login & Logout
     $routes->get('login', 'Auth::login');
     $routes->post('login/process', 'Auth::processLogin');
+
     $routes->get('logout', 'Auth::logout');
 });
 
 /*
 |--------------------------------------------------------------------------
-| Dashboard Routes (Role-Agnostic & Role-Specific)
+| Dashboard (Role-Based)
 |--------------------------------------------------------------------------
 */
 $routes->group('dashboard', function ($routes) {
 
-    // Halaman utama dashboard (role-agnostic)
     $routes->get('/', 'Dashboard::index');
 
-    /*
-    |----------------------------------------------------------------------
-    | Admin
-    |----------------------------------------------------------------------
-    */
+    // ADMIN
     $routes->get('admin', 'Dashboard::admin');
+    $routes->group('admin', function ($routes) {
+        $routes->get('kelola-akun', 'AdminController::kelolaAkun');
+        $routes->get('detail-akun/(:num)', 'AdminController::detailAkun/$1');
+        $routes->get('edit-akun/(:num)', 'AdminController::editAkun/$1');
+        $routes->post('update-akun/(:num)', 'AdminController::updateAkun/$1');
+        $routes->get('delete-akun/(:num)', 'AdminController::deleteAkun/$1');
+    });
 
-    $routes->get('admin/kelola-akun', 'AdminController::kelolaAkun');
-    $routes->get('admin/detail-akun/(:num)', 'AdminController::detailAkun/$1');
-    $routes->get('admin/edit-akun/(:num)', 'AdminController::editAkun/$1');
-    $routes->post('admin/update-akun/(:num)', 'AdminController::updateAkun/$1');
-    $routes->get('admin/delete-akun/(:num)', 'AdminController::deleteAkun/$1');
-
-
-    /*
-    |----------------------------------------------------------------------
-    | Pengajar
-    |----------------------------------------------------------------------
-    */
+    // PENGAJAR
     $routes->get('pengajar', 'Dashboard::pengajar');
-    $routes->get('materi', 'Dashboard::materi');   // Kelola materi pengajar
-    $routes->get('jadwal', 'Dashboard::jadwal');   // Kelola jadwal pengajar
+    $routes->get('materi', 'Dashboard::materi');
+    $routes->get('jadwal', 'Dashboard::jadwal');
+    $routes->get('quiz-pengajar', 'Dashboard::quizPengajar');
 
-    /*
-    |----------------------------------------------------------------------
-    | Quiz
-    |----------------------------------------------------------------------
-    */
-    $routes->get('quiz', 'Quiz::index');
-    $routes->get('quiz/start', 'Quiz::start');
-    $routes->post('quiz/submit', 'Quiz::submit');
+    // PENERIMA
+    $routes->get('penerima', 'Dashboard::penerima');
+    $routes->get('penerima/cari', 'Dashboard::cariMateri');
 
-    /*
-    |----------------------------------------------------------------------
-    | Forum
-    |----------------------------------------------------------------------
-    */
-    $routes->get('forum', 'Forum::index');
-    $routes->get('forum/topic/(:num)', 'Forum::topic/$1');
-    $routes->post('forum/addComment', 'Forum::addComment');
+    // QUIZ
+    $routes->group('quiz', function ($routes) {
+        $routes->get('/', 'Quiz::index');
+        $routes->get('start', 'Quiz::start');
+        $routes->post('submit', 'Quiz::submit');
+    });
 
-    /*
-    |----------------------------------------------------------------------
-    | Penghargaan (hanya dashboard)
-    |----------------------------------------------------------------------
-    */
-    $routes->get('penghargaan', 'Penghargaan::index');
+    // FORUM
+    $routes->group('forum', function ($routes) {
+        $routes->get('/', 'Forum::index');
+        $routes->get('topic/(:num)', 'Forum::topic/$1');
+        $routes->post('addComment', 'Forum::addComment');
+    });
 
-    /*
-    |----------------------------------------------------------------------
-    | Profil
-    |----------------------------------------------------------------------
-    */
+    // PROFIL
     $routes->get('profil', 'Profil::index');
 });
 
@@ -99,3 +79,9 @@ $routes->group('dashboard', function ($routes) {
 |--------------------------------------------------------------------------
 */
 $routes->get('penghargaan', 'Penghargaan::index');
+
+
+$routes->get('dashboard/penerima/cari', 'Dashboard::cariMateri');
+
+$routes->get('penerima/mapel/(:num)', 'Dashboard::detailMapel/$1');
+

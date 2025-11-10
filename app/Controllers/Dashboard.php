@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\MataPelajaranModel;
 
 class Dashboard extends BaseController
 {
@@ -12,17 +13,13 @@ class Dashboard extends BaseController
      */
     public function index()
     {
-        // 🔒 Pastikan user sudah login
         if (!session()->get('logged_in')) {
-            return redirect()
-                ->to(base_url('login'))
+            return redirect()->to(base_url('login'))
                 ->with('error', 'Silakan login terlebih dahulu.');
         }
 
-        // Ambil role dari session
         $role = session()->get('role');
 
-        // Arahkan ke dashboard sesuai role
         switch ($role) {
             case 'admin':
                 return redirect()->to(base_url('dashboard/admin'));
@@ -31,9 +28,7 @@ class Dashboard extends BaseController
             case 'penerima':
                 return redirect()->to(base_url('dashboard/penerima'));
             default:
-                // Jika role tidak dikenali
-                return redirect()
-                    ->to(base_url('login'))
+                return redirect()->to(base_url('login'))
                     ->with('error', 'Role tidak valid atau belum ditentukan.');
         }
     }
@@ -52,56 +47,67 @@ class Dashboard extends BaseController
             'username' => session()->get('username')
         ];
 
-        return view('dashboard/admin', $data);
+        return view('dashboard/admin/index', $data);
     }
 
     // ============================================================
     // 🎓 DASHBOARD PENGAJAR
     // ============================================================
     public function pengajar()
-{
-    if (session()->get('role') !== 'pengajar') {
-        return redirect()
-            ->to(base_url('dashboard'))
-            ->with('error', 'Anda tidak memiliki akses ke halaman ini.');
+    {
+        if (!$this->isAuthorized('pengajar')) {
+            return $this->accessDenied();
+        }
+
+        $data = [
+            'title'    => 'Dashboard Pengajar',
+            'username' => session()->get('username')
+        ];
+
+        return view('dashboard/pengajar/index', $data);
     }
 
-    return view('dashboard/pengajar', [
-        'username' => session()->get('username')
-    ]);
-}
-// ============================================================
-// 🎓 DASHBOARD PENGAJAR - Tambahan menu Kelola Materi & Quiz
-// ============================================================
-public function materi()
-{
-    if (session()->get('role') !== 'pengajar') {
-        return $this->accessDenied();
+    public function materi()
+    {
+        if (!$this->isAuthorized('pengajar')) {
+            return $this->accessDenied();
+        }
+
+        $data = [
+            'title'    => 'Kelola Materi',
+            'username' => session()->get('username')
+        ];
+
+        return view('dashboard/pengajar/materi', $data);
     }
 
-    $data = [
-        'title'    => 'Kelola Materi',
-        'username' => session()->get('username'),
-    ];
+    public function quizPengajar()
+    {
+        if (!$this->isAuthorized('pengajar')) {
+            return $this->accessDenied();
+        }
 
-    return view('dashboard/pengajar/materi', $data);
-}
+        $data = [
+            'title'    => 'Kelola Quiz',
+            'username' => session()->get('username')
+        ];
 
-public function quizPengajar()
-{
-    if (session()->get('role') !== 'pengajar') {
-        return $this->accessDenied();
+        return view('dashboard/pengajar/quiz', $data);
     }
 
-    $data = [
-        'title'    => 'Kelola Quiz',
-        'username' => session()->get('username'),
-    ];
+    public function jadwal()
+    {
+        if (!$this->isAuthorized('pengajar')) {
+            return $this->accessDenied();
+        }
 
-    return view('dashboard/pengajar/quiz', $data);
-}
+        $data = [
+            'title'    => 'Kelola Jadwal',
+            'username' => session()->get('username')
+        ];
 
-
+        return view('dashboard/pengajar/jadwal', $data);
+    }
 
     // ============================================================
     // 🎁 DASHBOARD PENERIMA
@@ -112,33 +118,87 @@ public function quizPengajar()
             return $this->accessDenied();
         }
 
+        $mapelModel = new MataPelajaranModel();
+
         $data = [
             'title'    => 'Dashboard Penerima',
-            'username' => session()->get('username')
+            'username' => session()->get('username'),
+            'mapel'    => $mapelModel->orderBy('id', 'ASC')->findAll()
         ];
 
-        return view('dashboard/penerima', $data);
+        return view('dashboard/penerima/index', $data);
     }
 
     // ============================================================
-    // 🔧 Fungsi Bantu (Helper)
+    // 🔍 FITUR PENCARIAN MATA PELAJARAN
     // ============================================================
+    public function cariMateri()
+    {
+        if (!$this->isAuthorized('penerima')) {
+            return $this->accessDenied();
+        }
 
-    /**
-     * Cek apakah user memiliki role tertentu
-     */
+        $keyword = $this->request->getGet('keyword');
+        $mapelModel = new MataPelajaranModel();
+
+        // cari berdasarkan nama_mapel atau pengajar
+        $result = $mapelModel
+            ->like('nama_mapel', $keyword)
+            ->orLike('pengajar', $keyword)
+            ->findAll();
+
+        $data = [
+            'title'    => 'Hasil Pencarian: ' . esc($keyword),
+            'username' => session()->get('username'),
+            'keyword'  => $keyword,
+            'mapel'    => $result
+        ];
+
+        return view('dashboard/penerima/hasil_cari', $data);
+    }
+
+    // ============================================================
+    // ⚙️ HELPER ROLE
+    // ============================================================
     private function isAuthorized(string $requiredRole): bool
     {
         return session()->get('logged_in') && session()->get('role') === $requiredRole;
     }
 
-    /**
-     * Redirect jika akses ditolak
-     */
     private function accessDenied()
     {
-        return redirect()
-            ->to(base_url('dashboard'))
+        return redirect()->to(base_url('dashboard'))
             ->with('error', 'Anda tidak memiliki akses ke halaman ini.');
     }
+
+public function detailMapel($id)
+{
+    if (!$this->isAuthorized('penerima')) {
+        return $this->accessDenied();
+    }
+
+    $mapelModel = new \App\Models\MataPelajaranModel();
+    $quizModel = new \App\Models\QuizModel();
+
+    $mapel = $mapelModel->find($id);
+
+    if (!$mapel) {
+        return redirect()->to(base_url('dashboard/penerima'))
+            ->with('error', 'Mata pelajaran tidak ditemukan.');
+    }
+
+    // ambil quiz sesuai mapel_id
+    $quizList = $quizModel->getQuizByMapel($id);
+
+    $data = [
+        'title'    => 'Detail Mata Pelajaran',
+        'username' => session()->get('username'),
+        'mapel'    => $mapel,
+        'quizList' => $quizList
+    ];
+
+    return view('dashboard/penerima/detail_mapel', $data);
+}
+
+
 }
