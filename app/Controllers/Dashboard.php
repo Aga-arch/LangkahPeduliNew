@@ -26,8 +26,8 @@ class Dashboard extends BaseController
         switch ($role) {
             case 'admin':
                 return redirect()->to(base_url('dashboard/admin'));
-            case 'mentor':
-                return redirect()->to(base_url('dashboard/mentor'));
+            case 'pengajar':
+                return redirect()->to(base_url('dashboard/pengajar'));
             case 'penerima':
                 return redirect()->to(base_url('dashboard/penerima'));
             default:
@@ -56,21 +56,52 @@ class Dashboard extends BaseController
     }
 
     // ============================================================
-    // 🎓 DASHBOARD MENTOR
+    // 🎓 DASHBOARD PENGAJAR
     // ============================================================
-    public function mentor()
-    {
-        if (!$this->isAuthorized('mentor')) {
-            return $this->accessDenied();
-        }
-
-        $data = [
-            'title'    => 'Dashboard Mentor',
-            'username' => session()->get('username')
-        ];
-
-        return view('dashboard/mentor', $data);
+    public function pengajar()
+{
+    if (session()->get('role') !== 'pengajar') {
+        return redirect()
+            ->to(base_url('dashboard'))
+            ->with('error', 'Anda tidak memiliki akses ke halaman ini.');
     }
+
+    return view('dashboard/pengajar', [
+        'username' => session()->get('username')
+    ]);
+}
+// ============================================================
+// 🎓 DASHBOARD PENGAJAR - Tambahan menu Kelola Materi & Quiz
+// ============================================================
+public function materi()
+{
+    if (session()->get('role') !== 'pengajar') {
+        return $this->accessDenied();
+    }
+
+    $data = [
+        'title'    => 'Kelola Materi',
+        'username' => session()->get('username'),
+    ];
+
+    return view('dashboard/pengajar/materi', $data);
+}
+
+public function quizPengajar()
+{
+    if (session()->get('role') !== 'pengajar') {
+        return $this->accessDenied();
+    }
+
+    $data = [
+        'title'    => 'Kelola Quiz',
+        'username' => session()->get('username'),
+    ];
+
+    return view('dashboard/pengajar/quiz', $data);
+}
+
+
 
     // ============================================================
     // 🎁 DASHBOARD PENERIMA

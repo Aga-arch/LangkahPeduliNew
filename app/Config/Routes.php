@@ -3,6 +3,12 @@
 use CodeIgniter\Router\RouteCollection;
 
 /** @var RouteCollection $routes */
+
+/*
+|--------------------------------------------------------------------------
+| Home
+|--------------------------------------------------------------------------
+*/
 $routes->get('/', 'Home::index');
 
 /*
@@ -23,35 +29,60 @@ $routes->group('', function ($routes) {
 
 /*
 |--------------------------------------------------------------------------
-| Dashboard Routes (Role-Agnostic & Admin)
+| Dashboard Routes (Role-Agnostic & Role-Specific)
 |--------------------------------------------------------------------------
 */
 $routes->group('dashboard', function ($routes) {
-    // Halaman utama dashboard
+
+    // Halaman utama dashboard (role-agnostic)
     $routes->get('/', 'Dashboard::index');
 
-    // Admin
+    /*
+    |----------------------------------------------------------------------
+    | Admin
+    |----------------------------------------------------------------------
+    */
     $routes->get('admin', 'Dashboard::admin');
 
-    // Pengajar
+    /*
+    |----------------------------------------------------------------------
+    | Pengajar
+    |----------------------------------------------------------------------
+    */
     $routes->get('pengajar', 'Dashboard::pengajar');
-    $routes->get('jadwal', 'Dashboard::jadwal');   // kelola jadwal pengajar
-    $routes->get('materi', 'Dashboard::materi');   // kelola materi pengajar
+    $routes->get('materi', 'Dashboard::materi');   // Kelola materi pengajar
+    $routes->get('jadwal', 'Dashboard::jadwal');   // Kelola jadwal pengajar
 
-    // Quiz
+    /*
+    |----------------------------------------------------------------------
+    | Quiz
+    |----------------------------------------------------------------------
+    */
     $routes->get('quiz', 'Quiz::index');
     $routes->get('quiz/start', 'Quiz::start');
     $routes->post('quiz/submit', 'Quiz::submit');
 
-    // Forum
+    /*
+    |----------------------------------------------------------------------
+    | Forum
+    |----------------------------------------------------------------------
+    */
     $routes->get('forum', 'Forum::index');
     $routes->get('forum/topic/(:num)', 'Forum::topic/$1');
     $routes->post('forum/addComment', 'Forum::addComment');
 
-    // Penghargaan (hanya dashboard)
+    /*
+    |----------------------------------------------------------------------
+    | Penghargaan (hanya dashboard)
+    |----------------------------------------------------------------------
+    */
     $routes->get('penghargaan', 'Penghargaan::index');
 
-    // Profil
+    /*
+    |----------------------------------------------------------------------
+    | Profil
+    |----------------------------------------------------------------------
+    */
     $routes->get('profil', 'Profil::index');
 });
 

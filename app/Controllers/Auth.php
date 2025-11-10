@@ -85,8 +85,8 @@ class Auth extends BaseController
         switch ($user['role']) {
             case 'admin':
                 return redirect()->to(base_url('dashboard/admin'));
-            case 'mentor':
-                return redirect()->to(base_url('dashboard/mentor'));
+            case 'pengajar':
+                return redirect()->to(base_url('dashboard/pengajar'));
             case 'penerima':
                 return redirect()->to(base_url('dashboard/penerima'));
             default:
