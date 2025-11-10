@@ -27,7 +27,7 @@
             margin-bottom: 30px;
             color: #333;
         }
-        input {
+        input, select {
             width: 100%;
             padding: 12px 15px;
             margin: 10px 0;

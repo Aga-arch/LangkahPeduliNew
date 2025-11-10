@@ -2,36 +2,57 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/** @var RouteCollection $routes */
+/**
+ * @var RouteCollection $routes
+ */
 $routes->get('/', 'Home::index');
 
-// Register
-$routes->get('register', 'Auth::register');
-$routes->post('register/save', 'Auth::saveRegister');
+/*
+|----------------------------------------------------------------------
+| Auth Routes
+|----------------------------------------------------------------------
+*/
+$routes->group('', function ($routes) {
+    // Register
+    $routes->get('register', 'Auth::register');
+    $routes->post('register/save', 'Auth::saveRegister');
 
-// Login
-$routes->get('login', 'Auth::login');
-$routes->post('login/process', 'Auth::processLogin');
+    // Login & Logout
+    $routes->get('login', 'Auth::login');
+    $routes->post('login/process', 'Auth::processLogin');
+    $routes->get('logout', 'Auth::logout');
+});
 
-// Logout
-$routes->get('logout', 'Auth::logout');
+/*
+|----------------------------------------------------------------------
+| Dashboard Routes
+|----------------------------------------------------------------------
+*/
+$routes->group('dashboard', function ($routes) {
+    // Halaman utama dashboard
+    $routes->get('/', 'Dashboard::index');
+    $routes->get('admin', 'Dashboard::admin'); // khusus admin
 
-// Dashboard
-$routes->get('dashboard', 'Dashboard::index');
-$routes->get('/dashboard/quiz', 'Quiz::index');
-$routes->get('/dashboard/quiz/start', 'Quiz::start');
-$routes->post('/dashboard/quiz/submit', 'Quiz::submit');
+    // Quiz
+    $routes->get('quiz', 'Quiz::index');
+    $routes->get('quiz/start', 'Quiz::start');
+    $routes->post('quiz/submit', 'Quiz::submit');
 
-$routes->get('/penghargaan', 'Penghargaan::index');
-$routes->get('/dashboard/penghargaan', 'Penghargaan::index');
+    // Forum
+    $routes->get('forum', 'Forum::index');
+    $routes->get('forum/topic/(:num)', 'Forum::topic/$1');
+    $routes->post('forum/addComment', 'Forum::addComment');
 
-$routes->get('/dashboard/forum', 'Forum::index');
-$routes->get('/dashboard/forum/topic/(:num)', 'Forum::topic/$1');
-$routes->post('/dashboard/forum/addComment', 'Forum::addComment');
+    // Penghargaan
+    $routes->get('penghargaan', 'Penghargaan::index');
 
-$routes->get('/dashboard/profil', 'Profil::index');
+    // Profil
+    $routes->get('profil', 'Profil::index');
+});
 
-
-
-
-
+/*
+|----------------------------------------------------------------------
+| Other Routes
+|----------------------------------------------------------------------
+*/
+$routes->get('penghargaan', 'Penghargaan::index');

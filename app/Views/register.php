@@ -27,7 +27,7 @@
             margin-bottom: 30px;
             color: #333;
         }
-        input {
+        input, select {
             width: 100%;
             padding: 12px 15px;
             margin: 10px 0;
@@ -89,6 +89,14 @@
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
+
+            <!-- Tambahan role -->
+            <select name="role" required>
+                <option value="" disabled selected>Pilih Peran</option>
+                <option value="mentor">Pengajar</option>
+                <option value="penerima">Pengguna</option>
+            </select>
+
             <button type="submit">Daftar</button>
         </form>
 
