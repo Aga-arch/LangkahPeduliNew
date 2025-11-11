@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 CRITICAL - 2025-11-03 11:46:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "welcome_message.php"
-=======
 CRITICAL - 2025-11-03 11:47:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "welcome_message.php"
->>>>>>> a5b7f0c9b649556a17ec2a2c857d5296ce0af1af
 [Method: GET, Route: /]
 in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message.php')
@@ -14,7 +11,6 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-<<<<<<< HEAD
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
 CRITICAL - 2025-11-03 11:47:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "welcome_message.php"
 [Method: GET, Route: /]
@@ -29,7 +25,6 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
-=======
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
 CRITICAL - 2025-11-03 11:51:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/layout.php"
 [Method: GET, Route: /]
@@ -73,7 +68,6 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
->>>>>>> a5b7f0c9b649556a17ec2a2c857d5296ce0af1af
 DEBUG - 2025-11-03 13:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 ERROR - 2025-11-03 13:10:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
 Stack trace:
@@ -1442,3 +1436,816 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
 DEBUG - 2025-11-03 16:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-11-03 16:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 13:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 13:35:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 13:37:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 13:37:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 13:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-03 15:04:55 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:04:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:06:08 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:06:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:06:47 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:06:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+DEBUG - 2025-11-03 15:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-03 15:08:49 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:08:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:12:19 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:12:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:17:00 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:17:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+DEBUG - 2025-11-03 15:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-03 15:17:34 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:17:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+DEBUG - 2025-11-03 15:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-03 15:18:19 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:18:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:19:19 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:19:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+DEBUG - 2025-11-03 15:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-03 15:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-03 15:33:48 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:33:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
+ERROR - 2025-11-03 15:44:48 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('langkah_peduli', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known.  in C:\xampp\htdocs\Langkah_PeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Langkah_PeduliNew\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\Langkah_PeduliNew\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\Langkah_PeduliNew\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\Langkah_PeduliNew\app\Controllers\Auth.php(24): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+#8 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\Langkah_PeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Langkah_PeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Langkah_PeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Langkah_PeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-03 15:44:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for langkah_peduli failed: No such host is known. 
+[Method: POST, Route: save-register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `email`, `password`) VALUES (:username:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(24): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->saveRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Langkah_PeduliNew\\public\\index.php')
