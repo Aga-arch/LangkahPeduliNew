@@ -13,7 +13,7 @@
       <div class="card-body text-center">
         <h3 class="mb-2">Terjadi kesalahan</h3>
         <p class="text-muted mb-3">Aksi yang Anda lakukan tidak dapat diselesaikan saat ini.</p>
-        <a href="<?= base_url('/') ?>" class="btn btn-primary">Kembali ke Beranda</a>
+        <a href="<?= base_url('/dashboard') ?>" class="btn btn-primary">Kembali ke Beranda</a>
       </div>
     </div>
   </div>

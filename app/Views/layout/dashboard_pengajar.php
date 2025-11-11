@@ -23,6 +23,19 @@
             z-index:100;
         }
 
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ✅ Logo diperbesar dan tidak bulat */
+        .logo-area img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
         header a { color:white; text-decoration:none; margin-left:15px; }
         header a:hover { text-decoration:underline; }
 
@@ -66,7 +79,11 @@
 <body>
 
 <header>
-    <h1><i class="bi bi-person-badge-fill me-2"></i>Dashboard Pengajar</h1>
+    <div class="logo-area">
+        <img src="<?= base_url('../images/Logo.png') ?>" alt="Logo">
+        <h1><i class="bi bi-person-badge-fill me-2"></i>Hallo <?= esc(session()->get('username')) ?></h1>
+    </div>
+
     <div class="d-flex align-items-center">
         <a href="<?= base_url('dashboard/profil') ?>"><i class="bi bi-person-circle me-1"></i><?= session()->get('username') ?></a>
         <a href="<?= base_url('logout') ?>" class="btn-logout"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
@@ -74,9 +91,13 @@
 </header>
 
 <div class="sidebar">
-    <a href="<?= base_url('dashboard/jadwal') ?>"><i class="bi bi-calendar2-fill me-2"></i>Kelola Jadwal</a>
-    <a href="<?= base_url('dashboard/materi') ?>"><i class="bi bi-journal-text me-2"></i>Kelola Materi</a>
+    <a href="<?= base_url('dashboard/pengajar/materi') ?>"><i class="bi bi-calendar2-fill me-2"></i>Kelola Materi</a>
+    <a href="<?= base_url('dashboard/pengajar/quiz') ?>"><i class="bi bi-journal-text me-2"></i>Kelola Quiz</a>
+    <a href="<?= base_url('dashboard/pengajar/banksoal') ?>"><i class="bi bi-collection me-2"></i>Kelola Bank Soal</a>
 </div>
+
+
+
 
 <div class="content">
     <?= $this->renderSection('content') ?>

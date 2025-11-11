@@ -1,4 +1,4 @@
-<?= $this->extend('layout/layout') ?>
+<?= $this->extend('layout/dashboard_pengajar') ?>
 <?= $this->section('content') ?>
 <h3>Kelola Quiz</h3>
 <p>Halaman ini digunakan untuk membuat dan mengelola soal quiz.</p>

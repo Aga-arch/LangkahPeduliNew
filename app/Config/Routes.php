@@ -7,14 +7,14 @@ use CodeIgniter\Router\RouteCollection;
 /*
 |--------------------------------------------------------------------------
 | Home
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------- 
 */
 $routes->get('/', 'Home::index');
 
 /*
 |--------------------------------------------------------------------------
 | Authentication (Login & Register)
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------- 
 */
 $routes->group('', function ($routes) {
     $routes->get('register', 'Auth::register');
@@ -29,7 +29,7 @@ $routes->group('', function ($routes) {
 /*
 |--------------------------------------------------------------------------
 | Dashboard (Role-Based)
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------- 
 */
 $routes->group('dashboard', function ($routes) {
 
@@ -48,12 +48,54 @@ $routes->group('dashboard', function ($routes) {
     // PENGAJAR
     $routes->get('pengajar', 'Dashboard::pengajar');
     $routes->get('materi', 'Dashboard::materi');
+
+    // Materi Pengajar
+    $routes->get('pengajar/materi', 'Materi::index');        // daftar materi  
+    $routes->get('pengajar/materi/semua', 'Materi::index/all');
+
+    $routes->get('pengajar/materi/tambah', 'Materi::tambah'); // form tambah materi
+    $routes->post('pengajar/materi/simpan', 'Materi::simpan'); // simpan materi
+    // Edit & Update
+    $routes->get('pengajar/materi/edit/(:num)', 'Materi::edit/$1');
+    $routes->post('pengajar/materi/update/(:num)', 'Materi::update/$1');
+    $routes->get('pengajar/materi/hapus/(:num)', 'Materi::hapus/$1');
+
     $routes->get('jadwal', 'Dashboard::jadwal');
-    $routes->get('quiz-pengajar', 'Dashboard::quizPengajar');
+    $routes->get('pengajar/quiz', 'Pengajar::quiz');
+    $routes->get('pengajar/banksoal', 'Pengajar::banksoal');
+    $routes->get('/banksoal', 'Banksoal::index');
+
+// ==================== BANKSOAL ====================
+$routes->group('pengajar', function($routes){
+    // Daftar banksoal pengajar
+    $routes->get('banksoal', 'Banksoal::index');
+    
+    // Form tambah soal
+    $routes->get('banksoal/tambah', 'Banksoal::create');
+    
+    // Simpan soal
+    $routes->post('banksoal/simpan', 'Banksoal::store');
+    
+    // Edit soal
+    $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
+    $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');
+    
+    // Hapus soal
+    $routes->get('banksoal/hapus/(:num)', 'Banksoal::delete/$1');
+});
+
+});
+
 
     // PENERIMA
+    $routes->get('dashboard/penerima', 'Dashboard::penerima');
+    $routes->get('dashboard/penerima/mapel', 'Dashboard::daftarMapel');
     $routes->get('penerima', 'Dashboard::penerima');
     $routes->get('penerima/cari', 'Dashboard::cariMateri');
+    $routes->get('penerima/mapel', 'Dashboard::daftarMapel');
+    $routes->get('penerima/mapel/(:num)', 'Dashboard::detailMapel/$1');
+    $routes->get('penghargaan', 'Penghargaan::index');
+    $routes->get('dashboard/penerima/penghargaan', 'Penghargaan::index');
 
     // QUIZ
     $routes->group('quiz', function ($routes) {
@@ -71,17 +113,13 @@ $routes->group('dashboard', function ($routes) {
 
     // PROFIL
     $routes->get('profil', 'Profil::index');
-});
+
 
 /*
 |--------------------------------------------------------------------------
 | Public Routes
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------- 
 */
 $routes->get('penghargaan', 'Penghargaan::index');
-
-
 $routes->get('dashboard/penerima/cari', 'Dashboard::cariMateri');
-
 $routes->get('penerima/mapel/(:num)', 'Dashboard::detailMapel/$1');
-

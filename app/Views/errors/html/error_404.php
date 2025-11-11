@@ -13,7 +13,7 @@
       <h1 class="display-5 text-primary">404</h1>
       <h3>Halaman tidak ditemukan</h3>
       <p class="text-muted">URL yang Anda buka tidak tersedia atau telah dipindahkan.</p>
-      <a href="<?= base_url('/') ?>" class="btn btn-outline-primary">Kembali ke Beranda</a>
+      <a href="<?= base_url('/dashboard') ?>" class="btn btn-outline-primary">Kembali ke Beranda</a>
     </div>
   </div>
 </body>

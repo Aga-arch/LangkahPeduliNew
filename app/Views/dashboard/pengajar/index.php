@@ -1,4 +1,4 @@
-<?= $this->extend('dashboard/layout') ?>
+<?= $this->extend('layout/dashboard_pengajar') ?>
 
 <?= $this->section('content') ?>
 <div class="container-fluid">
@@ -24,7 +24,7 @@
             <div class="card p-3">
                 <h5>Kelola Quiz</h5>
                 <p>Kelola soal dan quiz untuk siswa.</p>
-                <a href="<?= base_url('dashboard/quiz') ?>" class="btn btn-primary btn-sm mt-2">Kelola Quiz</a>
+                <a href="<?= base_url('Pengajar/quiz') ?>" class="btn btn-primary btn-sm mt-2">Kelola Quiz</a>
             </div>
         </div>
     </div>

@@ -113,21 +113,38 @@ class Dashboard extends BaseController
     // 🎁 DASHBOARD PENERIMA
     // ============================================================
     public function penerima()
-    {
-        if (!$this->isAuthorized('penerima')) {
-            return $this->accessDenied();
-        }
-
-        $mapelModel = new MataPelajaranModel();
-
-        $data = [
-            'title'    => 'Dashboard Penerima',
-            'username' => session()->get('username'),
-            'mapel'    => $mapelModel->orderBy('id', 'ASC')->findAll()
-        ];
-
-        return view('dashboard/penerima/index', $data);
+{
+    if (!$this->isAuthorized('penerima')) {
+        return $this->accessDenied();
     }
+
+    $data = [
+        'title'    => 'Dashboard Penerima',
+        'username' => session()->get('username')
+    ];
+
+    // ini adalah halaman utama (berisi 3 menu)
+    return view('dashboard/penerima/index', $data);
+}
+
+public function daftarMapel()
+{
+    if (!$this->isAuthorized('penerima')) {
+        return $this->accessDenied();
+    }
+
+    $mapelModel = new \App\Models\MataPelajaranModel();
+
+    $data = [
+        'title'    => 'Daftar Mata Pelajaran',
+        'username' => session()->get('username'),
+        'mapel'    => $mapelModel->orderBy('id', 'ASC')->findAll()
+    ];
+
+    // halaman daftar mapel seperti di screenshot kamu
+    return view('dashboard/penerima/daftar_mapel', $data);
+}
+
 
     // ============================================================
     // 🔍 FITUR PENCARIAN MATA PELAJARAN
@@ -178,27 +195,29 @@ public function detailMapel($id)
     }
 
     $mapelModel = new \App\Models\MataPelajaranModel();
-    $quizModel = new \App\Models\QuizModel();
+    $quizModel  = new \App\Models\QuizModel();
+    $topikModel = new \App\Models\TopikModel();
 
     $mapel = $mapelModel->find($id);
-
     if (!$mapel) {
-        return redirect()->to(base_url('dashboard/penerima'))
+        return redirect()->to(base_url('dashboard/penerima/mapel'))
             ->with('error', 'Mata pelajaran tidak ditemukan.');
     }
 
-    // ambil quiz sesuai mapel_id
     $quizList = $quizModel->getQuizByMapel($id);
+    $topikList = $topikModel->getTopikByMapel($id);
 
     $data = [
         'title'    => 'Detail Mata Pelajaran',
         'username' => session()->get('username'),
         'mapel'    => $mapel,
-        'quizList' => $quizList
+        'quizList' => $quizList,
+        'topikList'=> $topikList
     ];
 
     return view('dashboard/penerima/detail_mapel', $data);
 }
+
 
 
 }
