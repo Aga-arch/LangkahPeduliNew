@@ -6,49 +6,98 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    // 🔹 Halaman Register
     public function register()
     {
         return view('register');
     }
 
+    // 🔹 Proses Register
     public function saveRegister()
     {
         $userModel = new UserModel();
+        $username = trim($this->request->getPost('username'));
+        $email = trim($this->request->getPost('email'));
+        $password = $this->request->getPost('password');
+        $role = $this->request->getPost('role'); // 🆕 ambil role dari form
 
-        $data = [
-            'username' => $this->request->getPost('username'),
-            'email'    => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
-        ];
+        // Validasi input
+        if (empty($username) || empty($email) || empty($password) || empty($role)) {
+            return redirect()->back()->with('error', 'Semua kolom wajib diisi.');
+        }
 
-        $userModel->insert($data);
-        return redirect()->to('/login')->with('success', 'Pendaftaran berhasil. Silakan login.');
+        // Cek duplikasi username/email
+        if ($userModel->where('email', $email)->orWhere('username', $username)->first()) {
+            return redirect()->back()->with('error', 'Username atau email sudah terdaftar.');
+        }
+
+        // Simpan data ke database
+        $userModel->insert([
+            'username' => $username,
+            'email'    => $email,
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'role'     => $role // 🆕 simpan role ke DB
+        ]);
+
+        return redirect()->to(base_url('login'))->with('success', 'Pendaftaran berhasil! Silakan login.');
     }
 
+    // 🔹 Halaman Login
     public function login()
     {
         return view('login');
     }
 
-    public function authLogin()
+    // 🔹 Proses Login
+    public function processLogin()
     {
         $userModel = new UserModel();
-        $user = $userModel->where('username', $this->request->getPost('username'))->first();
+        $usernameOrEmail = trim($this->request->getPost('username'));
+        $password = $this->request->getPost('password');
 
-        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            session()->set([
-                'username' => $user['username'],
-                'logged_in' => true
-            ]);
-            return redirect()->to('/dashboard');
-        } else {
-            return redirect()->back()->with('error', 'Username atau password salah.');
+        if (empty($usernameOrEmail) || empty($password)) {
+            return redirect()->back()->with('error', 'Username dan password wajib diisi.');
+        }
+
+        // Cek user berdasarkan username atau email
+        $user = $userModel->where('username', $usernameOrEmail)
+                          ->orWhere('email', $usernameOrEmail)
+                          ->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Akun tidak ditemukan.');
+        }
+
+        // Cek password
+        if (!password_verify($password, $user['password'])) {
+            return redirect()->back()->with('error', 'Password salah.');
+        }
+
+        // Set session termasuk role
+        session()->set([
+            'username'  => $user['username'],
+            'email'     => $user['email'],
+            'role'      => $user['role'], // 🆕 tambahkan role ke session
+            'logged_in' => true,
+        ]);
+
+        // Redirect sesuai role
+        switch ($user['role']) {
+            case 'admin':
+                return redirect()->to(base_url('dashboard/admin'));
+            case 'pengajar':
+                return redirect()->to(base_url('dashboard/pengajar'));
+            case 'penerima':
+                return redirect()->to(base_url('dashboard/penerima'));
+            default:
+                return redirect()->to(base_url('dashboard'));
         }
     }
 
+    // 🔹 Logout
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to(base_url('login'))->with('success', 'Anda telah logout.');
     }
 }
