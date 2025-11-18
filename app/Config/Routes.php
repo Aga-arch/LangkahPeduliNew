@@ -65,22 +65,16 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('pengajar/banksoal', 'Pengajar::banksoal');
     $routes->get('/banksoal', 'Banksoal::index');
 
-// ==================== BANK SOAL (FIXED & CLEAN) ====================
-$routes->group('pengajar', function($routes){
-
+    $routes->group('pengajar', function($routes){
     $routes->get('banksoal', 'Banksoal::index');
     $routes->get('banksoal/tambah', 'Banksoal::create');
-
-    $routes->post('banksoal/simpan', 'Banksoal::store');
-
+    // HARUS SESUAI URL FORM
+    $routes->post('banksoal/store', 'Banksoal::store'); // <--- tambahkan "banksoal/" di depan
     $routes->get('banksoal/detail/(:num)', 'Banksoal::detail/$1');
-
     $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
     $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');
-
     $routes->get('banksoal/hapus/(:num)', 'Banksoal::delete/$1');
 });
-
 });
 
 
