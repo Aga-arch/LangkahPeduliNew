@@ -4,37 +4,24 @@
 <h3>Tambah Bank Soal</h3>
 
 <form action="<?= base_url('dashboard/pengajar/banksoal/simpan') ?>" method="post">
+
     <div class="mb-3">
-        <label>Type Soal</label>
-        <select name="type_soal" class="form-control">
-            <option value="PG">Pilihan Ganda</option>
-            <option value="Essay">Essay</option>
-        </select>
+        <label class="form-label">Nama Bank Soal</label>
+        <input type="text" name="nama_banksoal" class="form-control" required>
     </div>
+
     <div class="mb-3">
-        <label>Pertanyaan</label>
-        <textarea name="pertanyaan" class="form-control" required></textarea>
+        <label class="form-label">Topik Pembelajaran</label>
+        <input type="text" name="topik_pembelajaran" class="form-control" required>
     </div>
+
     <div class="mb-3">
-        <label>Opsi (jika PG, pisahkan tiap opsi)</label>
-        <input type="text" name="opsi[]" class="form-control">
-        <input type="text" name="opsi[]" class="form-control mt-1">
-        <input type="text" name="opsi[]" class="form-control mt-1">
-        <input type="text" name="opsi[]" class="form-control mt-1">
+        <label class="form-label">Mata Pelajaran</label>
+        <input type="text" name="mata_pelajaran" class="form-control" required>
     </div>
-    <div class="mb-3">
-        <label>Jawaban</label>
-        <input type="text" name="jawaban" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label>Tingkat Kesulitan</label>
-        <select name="tingkat_kesulitan" class="form-control">
-            <option value="Mudah">Mudah</option>
-            <option value="Sedang">Sedang</option>
-            <option value="Sulit">Sulit</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Simpan</button>
+
+    <button type="submit" class="btn btn-success">Simpan</button>
+    <a href="<?= base_url('dashboard/pengajar/banksoal') ?>" class="btn btn-secondary">Kembali</a>
 </form>
 
 <?= $this->endSection() ?>

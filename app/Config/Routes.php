@@ -65,26 +65,25 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('pengajar/banksoal', 'Pengajar::banksoal');
     $routes->get('/banksoal', 'Banksoal::index');
 
-// ==================== BANKSOAL ====================
+// ==================== BANK SOAL (FIXED & CLEAN) ====================
 $routes->group('pengajar', function($routes){
-    // Daftar banksoal pengajar
+
     $routes->get('banksoal', 'Banksoal::index');
-    
-    // Form tambah soal
     $routes->get('banksoal/tambah', 'Banksoal::create');
-    
-    // Simpan soal
+
     $routes->post('banksoal/simpan', 'Banksoal::store');
-    
-    // Edit soal
+
+    $routes->get('banksoal/detail/(:num)', 'Banksoal::detail/$1');
+
     $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
     $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');
-    
-    // Hapus soal
+
     $routes->get('banksoal/hapus/(:num)', 'Banksoal::delete/$1');
 });
 
 });
+
+
 
 
     // PENERIMA
