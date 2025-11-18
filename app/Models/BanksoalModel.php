@@ -7,13 +7,12 @@ use CodeIgniter\Model;
 class BanksoalModel extends Model
 {
     protected $table = 'banksoal';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_banksoal';
+
     protected $allowedFields = [
+        'nama_banksoal',
         'id_pengajar',
-        'type_soal',
-        'pertanyaan',
-        'opsi',
-        'jawaban',
-        'tingkat_kesulitan'
+        'topik_pembelajaran',
+        'mata_pelajaran'
     ];
 }
