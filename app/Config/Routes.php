@@ -123,3 +123,13 @@ $routes->group('pengajar', function($routes){
 $routes->get('penghargaan', 'Penghargaan::index');
 $routes->get('dashboard/penerima/cari', 'Dashboard::cariMateri');
 $routes->get('penerima/mapel/(:num)', 'Dashboard::detailMapel/$1');
+
+
+//Forum
+$routes->group('dashboard', ['filter' => 'auth'], function($routes) {
+    $routes->get('forum', 'Forum::index');
+    $routes->get('forum/room/(:num)', 'Forum::room/$1');
+});
+
+
+

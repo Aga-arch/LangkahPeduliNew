@@ -1,0 +1,281 @@
+DEBUG - 2025-11-18 06:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 06:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 06:59:26 --> ErrorException: Undefined variable $Route
+[Method: GET, Route: dashboard/penerima]
+in APPPATH\Config\Routes.php on line 130.
+ 1 APPPATH\Config\Routes.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Route', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php', 130)
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-11-18 06:59:27 --> ErrorException: Undefined variable $Route
+[Method: GET, Route: dashboard/penerima]
+in APPPATH\Config\Routes.php on line 130.
+ 1 APPPATH\Config\Routes.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Route', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php', 130)
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-11-18 06:59:28 --> ErrorException: Undefined variable $Route
+[Method: GET, Route: dashboard]
+in APPPATH\Config\Routes.php on line 130.
+ 1 APPPATH\Config\Routes.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Route', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php', 130)
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:02:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:10:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:10:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:10:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:14:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:14:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:18:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:18:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum', [], true)
+ 3 APPPATH\Controllers\Forum.php(22): view('dashboard/forum', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+WARNING - 2025-11-18 07:28:00 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+WARNING - 2025-11-18 07:28:01 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+WARNING - 2025-11-18 07:28:02 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+WARNING - 2025-11-18 07:28:04 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+WARNING - 2025-11-18 07:28:05 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+WARNING - 2025-11-18 07:28:13 --> Routes file not found: "C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Config/Routes.php"
+DEBUG - 2025-11-18 07:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:51:35 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Filters\Filters.php on line 590.
+ 1 SYSTEMPATH\Filters\Filters.php(590): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+ 2 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter('auth', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 07:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 07:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 07:57:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum/index.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum/index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum/index', [], true)
+ 3 APPPATH\Controllers\Forum.php(39): view('dashboard/forum/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 08:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 08:15:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum/index.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum/index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum/index', [], true)
+ 3 APPPATH\Controllers\Forum.php(17): view('dashboard/forum/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 08:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 08:15:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/forum/index.php"
+[Method: GET, Route: dashboard/forum]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/forum/index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/forum/index', [], true)
+ 3 APPPATH\Controllers\Forum.php(17): view('dashboard/forum/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 08:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 08:20:37 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 36.
+ 1 APPPATH\Views\forum\index.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 36)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(17): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 08:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-18 08:20:41 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 36.
+ 1 APPPATH\Views\forum\index.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 36)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(17): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-18 08:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-18 08:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

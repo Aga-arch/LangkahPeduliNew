@@ -1,0 +1,381 @@
+DEBUG - 2025-11-19 13:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-19 13:12:11 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'newlangkah', 3307, '', 0)
+#1 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+#7 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#8 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\Users\\mumpu\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+#6 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#7 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\Users\\mumpu\\...')
+#13 {main}
+CRITICAL - 2025-11-19 13:12:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+OR `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-19 13:12:25 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'newlangkah', 3307, '', 0)
+#1 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+#7 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#8 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\Users\\mumpu\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\app\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+#6 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#7 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\mumpu\IdeaProjects\PemrogramanPerangkatBergerak\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\Users\\mumpu\\...')
+#13 {main}
+CRITICAL - 2025-11-19 13:12:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+OR `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth.php(65): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:13:21 --> Error: Class "App\Models\ForumModel" not found
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Controllers\Forum.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:14:36 --> Error: Class "App\Models\ForumModel" not found
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Controllers\Forum.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:17:41 --> Error: Class "App\Models\ForumModel" not found
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Controllers\Forum.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:20:02 --> Error: Class "App\Models\ForumsModel" not found
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Controllers\Forum.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:20:03 --> Error: Class "App\Models\ForumsModel" not found
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Controllers\Forum.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:22:21 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 36.
+ 1 APPPATH\Views\forum\index.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 36)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(14): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:20 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:21 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:22 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:22 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:23 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:23 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:23 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:23 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:26:24 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:30:19 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 35.
+ 1 APPPATH\Views\forum\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(15): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-19 13:51:01 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: dashboard/forum]
+in APPPATH\Views\forum\index.php on line 44.
+ 1 APPPATH\Views\forum\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php', 44)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\app\\Views\\forum\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('forum/index', [], true)
+ 5 APPPATH\Controllers\Forum.php(14): view('forum/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\mumpu\\IdeaProjects\\PemrogramanPerangkatBergerak\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-11-19 13:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-19 13:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
