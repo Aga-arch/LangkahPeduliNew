@@ -155,7 +155,7 @@
       <div class="flash success"><?= session()->getFlashdata('success') ?></div>
     <?php endif; ?>
 
-    <form action="<?= base_url('login/process') ?>" method="post">
+    <form action="<?= site_url('login/process') ?>" method="post">
       <?= csrf_field() ?>
       <input type="text" name="username" placeholder="Username atau Email" required>
       <input type="password" name="password" placeholder="Password" required>

@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= esc($title ?? 'Dashboard Penerima') ?></title>
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
@@ -17,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* Navbar modern */
     .navbar {
       background: #ffffff;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
@@ -41,10 +39,14 @@
       height: 30px;
     }
 
-    /* Search Bar */
-    .search-bar {
-      width: 45%;
-      max-width: 480px;
+    .nav-link {
+      font-weight: 500;
+      margin-right: 15px;
+      color: #4f46e5 !important;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
     }
 
     .search-bar input {
@@ -62,33 +64,6 @@
       outline: none;
     }
 
-    /* Profile area */
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .profile i {
-      font-size: 1.6rem;
-      color: #4f46e5;
-    }
-
-    .profile span {
-      font-weight: 500;
-      color: #333;
-    }
-
-    /* Dropdown menu profil */
-    .dropdown-menu {
-      border-radius: 12px;
-      border: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Main content */
     .content {
       margin-top: 100px;
       animation: fadeIn 0.4s ease;
@@ -111,7 +86,6 @@
       font-weight: 500;
     }
 
-    /* Responsiveness */
     @media (max-width: 768px) {
       .search-bar {
         width: 100%;
@@ -125,19 +99,24 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-white">
-  <div class="container-fluid justify-content-between">
+  <div class="container-fluid">
     <!-- Logo -->
     <a class="navbar-brand" href="<?= base_url('dashboard/penerima') ?>">
       <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Logo">
       <span>Langkah Peduli</span>
     </a>
 
-    <!-- Search Bar -->
+    <!-- Menu Forum -->
+    <a href="<?= base_url('dashboard/penerima/forum') ?>" class="nav-link">
+      <i class="bi bi-chat-dots"></i> Forum
+    </a>
+
+    <!-- Search -->
     <form action="<?= base_url('dashboard/penerima/cari') ?>" method="get" class="d-flex search-bar mx-auto">
       <input type="text" name="keyword" class="form-control" placeholder="Cari mata pelajaran..." required>
     </form>
 
-    <!-- Profil Dropdown -->
+    <!-- Profil -->
     <div class="dropdown">
       <div class="profile dropdown-toggle" data-bs-toggle="dropdown">
         <i class="bi bi-person-circle"></i>
@@ -151,7 +130,7 @@
   </div>
 </nav>
 
-<!-- Main content -->
+<!-- Halaman -->
 <div class="container content">
   <?= $this->renderSection('content') ?>
 </div>
@@ -160,7 +139,7 @@
   <p>&copy; <?= date('Y') ?> <span>Langkah Peduli</span>. Semua hak dilindungi.</p>
 </footer>
 
-<!-- Bootstrap JS -->
+<!-- Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

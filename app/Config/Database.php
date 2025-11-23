@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => '127.0.0.1',          // gunakan IP, bukan nama database
         'username'     => 'root',               // user default XAMPP
         'password'     => '',                   // biarkan kosong jika tanpa password
-        'database'     => 'langkah_peduli_new', // database baru yang kamu buat
+        'database'     => 'projekPI', // database baru yang kamu buat
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -61,7 +61,7 @@ class Database extends Config
         'hostname'    => '127.0.0.1',
         'username'    => 'root',
         'password'    => '',
-        'database'    => 'langkah_peduli_new',
+        'database'    => 'newlangkah',
         'DBDriver'    => 'MySQLi',
         'DBPrefix'    => '',
         'pConnect'    => false,
