@@ -2,41 +2,51 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Models\ForumModel;
+use App\Models\KomentarModel;
 
 class Forum extends BaseController
 {
     public function index()
     {
-        if (!session()->get('logged_in')) {
-            return redirect()->to(base_url('login'))->with('error', 'Silakan login terlebih dahulu.');
+        $forumModel = new ForumModel();
+        $data['forums'] = $forumModel->getForumTerbaru();
+
+        return view('dashboard/penerima/forum/index', $data);
+    }
+
+    public function detail($id)
+    {
+        $forumModel = new ForumModel();
+        $komentarModel = new KomentarModel();
+
+        $data['forum'] = $forumModel->find($id);
+        $data['komentar'] = $komentarModel
+            ->where('forum_id', $id)
+            ->orderBy('tanggal', 'ASC')
+            ->findAll();
+
+        if (!$data['forum']) {
+            return redirect()->to(base_url('dashboard/penerima/forum'))->with('error', 'Forum tidak ditemukan.');
         }
 
-        // Dummy data daftar topik forum
-        $topics = [
-            ['id' => 1, 'judul' => 'Cara meningkatkan skor quiz', 'penulis' => 'Rina', 'tanggal' => '2025-11-01'],
-            ['id' => 2, 'judul' => 'Pengalaman ikut event Langkah Peduli', 'penulis' => 'Budi', 'tanggal' => '2025-10-28'],
-            ['id' => 3, 'judul' => 'Saran fitur baru di aplikasi', 'penulis' => 'Andi', 'tanggal' => '2025-10-20'],
-        ];
-
-        return view('dashboard/forum', ['topics' => $topics]);
+        return view('dashboard/penerima/forum/detail', $data);
     }
 
-    public function topic($id)
+    public function tambahKomentar($id)
     {
-        // Dummy data untuk satu topik
-        $topic = [
-            'judul' => "Topik Forum #$id",
-            'isi' => 'Diskusi ini masih kosong. Silakan tambahkan komentar pertama kamu!',
-            'id' => $id
-        ];
+        if (!$this->request->getPost('isi')) {
+            return redirect()->back()->with('error', 'Komentar tidak boleh kosong');
+        }
 
-        return view('dashboard/forum_topic', ['topic' => $topic]);
-    }
+        $komentarModel = new KomentarModel();
+        $komentarModel->insert([
+            'forum_id' => $id,
+            'user_id'  => session()->get('userId'),
+            'isi'      => $this->request->getPost('isi'),
+            'tanggal'  => date('Y-m-d H:i:s')
+        ]);
 
-    public function addComment()
-    {
-        $comment = $this->request->getPost('comment');
-        return redirect()->back()->with('success', 'Komentar berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Komentar berhasil ditambahkan');
     }
 }

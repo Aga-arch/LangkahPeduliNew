@@ -6,49 +6,46 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
-    // 🔹 Halaman Register
     public function register()
     {
         return view('register');
     }
 
-    // 🔹 Proses Register
     public function saveRegister()
     {
         $userModel = new UserModel();
         $username = trim($this->request->getPost('username'));
         $email = trim($this->request->getPost('email'));
         $password = $this->request->getPost('password');
-        $role = $this->request->getPost('role'); // 🆕 ambil role dari form
+        $role = $this->request->getPost('role');
 
-        // Validasi input
         if (empty($username) || empty($email) || empty($password) || empty($role)) {
             return redirect()->back()->with('error', 'Semua kolom wajib diisi.');
         }
 
-        // Cek duplikasi username/email
+        if ($role === 'admin') {
+            return redirect()->back()->with('error', 'Role admin tidak dapat didaftarkan.');
+        }
+
         if ($userModel->where('email', $email)->orWhere('username', $username)->first()) {
             return redirect()->back()->with('error', 'Username atau email sudah terdaftar.');
         }
 
-        // Simpan data ke database
         $userModel->insert([
             'username' => $username,
             'email'    => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
-            'role'     => $role // 🆕 simpan role ke DB
+            'role'     => $role
         ]);
 
-        return redirect()->to(base_url('login'))->with('success', 'Pendaftaran berhasil! Silakan login.');
+        return redirect()->to('login')->with('success', 'Pendaftaran berhasil. Silakan login.');
     }
 
-    // 🔹 Halaman Login
     public function login()
     {
         return view('login');
     }
 
-    // 🔹 Proses Login
     public function processLogin()
     {
         $userModel = new UserModel();
@@ -59,45 +56,48 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Username dan password wajib diisi.');
         }
 
-        // Cek user berdasarkan username atau email
-        $user = $userModel->where('username', $usernameOrEmail)
-                          ->orWhere('email', $usernameOrEmail)
-                          ->first();
+        $user = $userModel
+            ->groupStart()
+            ->where('LOWER(username)', strtolower($usernameOrEmail))
+            ->orWhere('LOWER(email)', strtolower($usernameOrEmail))
+            ->groupEnd()
+            ->first();
+
 
         if (!$user) {
             return redirect()->back()->with('error', 'Akun tidak ditemukan.');
         }
 
-        // Cek password
         if (!password_verify($password, $user['password'])) {
             return redirect()->back()->with('error', 'Password salah.');
         }
 
-        // Set session termasuk role
         session()->set([
+            'userId'    => $user['id'],
             'username'  => $user['username'],
             'email'     => $user['email'],
-            'role'      => $user['role'], // 🆕 tambahkan role ke session
+            'role'      => $user['role'],
             'logged_in' => true,
         ]);
 
-        // Redirect sesuai role
-        switch ($user['role']) {
-            case 'admin':
-                return redirect()->to(base_url('dashboard/admin'));
-            case 'pengajar':
-                return redirect()->to(base_url('dashboard/pengajar'));
-            case 'penerima':
-                return redirect()->to(base_url('dashboard/penerima'));
-            default:
-                return redirect()->to(base_url('dashboard'));
+        if ($user['role'] === 'admin') {
+            return redirect()->to('dashboard/admin');
         }
+
+        if ($user['role'] === 'pengajar') {
+            return redirect()->to('dashboard/pengajar');
+        }
+
+        if ($user['role'] === 'penerima') {
+            return redirect()->to('dashboard/penerima');
+        }
+
+        return redirect()->to('dashboard');
     }
 
-    // 🔹 Logout
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login'))->with('success', 'Anda telah logout.');
+        return redirect()->to('login')->with('success', 'Anda telah logout.');
     }
 }
