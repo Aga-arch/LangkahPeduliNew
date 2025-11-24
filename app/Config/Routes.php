@@ -126,10 +126,15 @@ $routes->get('penerima/mapel/(:num)', 'Dashboard::detailMapel/$1');
 
 
 //Forum
-$routes->group('dashboard', ['filter' => 'auth'], function($routes) {
-    $routes->get('forum', 'Forum::index');
-    $routes->get('forum/room/(:num)', 'Forum::room/$1');
+$routes->group('dashboard/forum', ['filter' => 'auth'], function($routes){
+    $routes->get('', 'Forum::index');
+    $routes->get('room/(:num)', 'Forum::room/$1');
+
+    $routes->post('store', 'Forum::storePost');           // post admin
+    $routes->post('storeComment', 'Forum::storeComment'); // komentar user
+    $routes->get('deleteComment/(:num)', 'Forum::deleteComment/$1'); // hapus komentar
 });
+
 
 
 
