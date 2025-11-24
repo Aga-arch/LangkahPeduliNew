@@ -32,19 +32,22 @@
                     </thead>
                     <tbody>
                         <?php $no = 1; foreach($materi as $m): ?>
-                           <?php foreach($materi as $m): ?>
-<tr>
-    <td><?= esc($m['kode_mapel']) ?></td>
-    <td><?= esc($m['nama_mapel']) ?></td>
-    <td><?= esc($m['deskripsi']) ?></td>
-    <td>
-        <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$m['id']) ?>" class="btn btn-sm btn-primary">Edit</a>
-        <a href="<?= base_url('dashboard/pengajar/materi/delete/'.$m['id']) ?>" class="btn btn-sm btn-danger" 
-           onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
-    </td>
-</tr>
-<?php endforeach; ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= esc($m['kode_mapel']) ?></td>
+                            <td><?= esc($m['nama_mapel']) ?></td>
+                            <td><?= esc($m['deskripsi']) ?></td>
+                            <td><?= esc($m['pengajar']) ?></td>
+                            <td><?= esc($m['created_at']) ?></td>
+                            <td>
+                                <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$m['id']) ?>" 
+                                   class="btn btn-sm btn-primary">Edit</a>
 
+                                <a href="<?= base_url('dashboard/pengajar/materi/hapus/'.$m['id']) ?>" 
+                                   class="btn btn-sm btn-danger"
+                                   onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

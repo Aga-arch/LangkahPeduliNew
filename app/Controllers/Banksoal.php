@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\BanksoalModel;
+use App\Models\SoalModel;
 
 class Banksoal extends BaseController
 {
@@ -13,21 +14,24 @@ class Banksoal extends BaseController
         $this->banksoal = new BanksoalModel();
     }
 
-    // LIST BANK SOAL (MILIK PENGAJAR)
+    // LIST BANK SOAL
     public function index()
     {
-        $id_pengajar = session()->get('id_pengajar'); // FIX
+        $id_pengajar = session()->get('id_pengajar'); // ambil dari session pengajar
+        if (!$id_pengajar) {
+            return redirect()->to('dashboard/pengajar')
+                ->with('error', 'Session pengajar kosong!');
+        }
 
         $data = [
-            'title'     => 'Bank Soal',
-            'banksoal'  => $this->banksoal->where('id_pengajar', $id_pengajar)->findAll(),
-            'username'  => session()->get('username')
+            'title'    => 'Bank Soal',
+            'banksoal' => $this->banksoal->where('id_pengajar', $id_pengajar)->findAll()
         ];
 
         return view('dashboard/pengajar/banksoal', $data);
     }
 
-    // FORM TAMBAH
+    // FORM TAMBAH BANK SOAL
     public function create()
     {
         return view('dashboard/pengajar/tambah_banksoal', [
@@ -35,90 +39,60 @@ class Banksoal extends BaseController
         ]);
     }
 
-    // SIMPAN DATA BANK SOAL
+    // SIMPAN BANK SOAL
     public function store()
     {
-        $id_pengajar = session()->get('id_pengajar'); // FIX
-
+        $id_pengajar = session()->get('id_pengajar');
         if (!$id_pengajar) {
-            return redirect()->back()->with('error', 'Session pengajar tidak ditemukan.');
+            return redirect()->back()->with('error', 'Session pengajar kosong!');
         }
 
-        $this->banksoal->insert([
+        // Ambil data dari form
+        $data = [
             'nama_banksoal'      => $this->request->getPost('nama_banksoal'),
             'topik_pembelajaran' => $this->request->getPost('topik_pembelajaran'),
             'mata_pelajaran'     => $this->request->getPost('mata_pelajaran'),
-            'id_pengajar'        => $id_pengajar
-        ]);
+            'id_pengajar'        => $id_pengajar,
+            'created_at'         => date('Y-m-d H:i:s')
+        ];
+
+        // Insert ke database
+        $this->banksoal->insert($data);
 
         return redirect()->to(base_url('dashboard/pengajar/banksoal'))
             ->with('success', 'Bank soal berhasil ditambahkan!');
     }
 
-    // FORM EDIT
-    public function edit($id_banksoal)
-    {
-        $banksoal = $this->banksoal->find($id_banksoal);
-
-        if (!$banksoal || $banksoal['id_pengajar'] != session()->get('id_pengajar')) { // FIX
-            return redirect()->back()->with('error', 'Tidak diizinkan!');
-        }
-
-        return view('dashboard/pengajar/edit_banksoal', [
-            'title'     => 'Edit Bank Soal',
-            'banksoal'  => $banksoal
-        ]);
-    }
-
-    // UPDATE BANKSOAL
-    public function update($id_banksoal)
-    {
-        $banksoal = $this->banksoal->find($id_banksoal);
-
-        if (!$banksoal || $banksoal['id_pengajar'] != session()->get('id_pengajar')) { // FIX
-            return redirect()->back()->with('error', 'Tidak diizinkan!');
-        }
-
-        $this->banksoal->update($id_banksoal, [
-            'nama_banksoal'      => $this->request->getPost('nama_banksoal'),
-            'topik_pembelajaran' => $this->request->getPost('topik_pembelajaran'),
-            'mata_pelajaran'     => $this->request->getPost('mata_pelajaran')
-        ]);
-
-        return redirect()->to(base_url('dashboard/pengajar/banksoal'))
-            ->with('success', 'Bank soal berhasil diperbarui!');
-    }
-
     // DETAIL BANK SOAL
-    public function detail($id_banksoal)
+    public function detail($id = null)
     {
-        $banksoal = $this->banksoal->find($id_banksoal);
-
-        if (!$banksoal || $banksoal['id_pengajar'] != session()->get('id_pengajar')) { // FIX
-            return redirect()->back()->with('error', 'Tidak diizinkan!');
+        if (!$id) {
+            return redirect()->to(base_url('dashboard/pengajar/banksoal'))
+                ->with('error', 'ID banksoal tidak ditemukan.');
         }
 
-        $soalModel = new \App\Models\SoalModel();
-        $soal = $soalModel->where('id_banksoal', $id_banksoal)->findAll();
+        $banksoal = $this->banksoal->find($id);
+        if (!$banksoal) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
 
-        return view('dashboard/pengajar/detail_banksoal', [
+        // Ambil soal yang terkait
+        $soalModel = new SoalModel();
+        $soal = $soalModel->where('id_banksoal', $id)->findAll();
+
+        $data = [
             'title'    => 'Detail Bank Soal',
             'banksoal' => $banksoal,
             'soal'     => $soal
-        ]);
+        ];
+
+        return view('dashboard/pengajar/banksoal_detail', $data);
     }
 
-    // HAPUS
-    public function delete($id_banksoal)
+    // HAPUS BANK SOAL
+    public function delete($id)
     {
-        $banksoal = $this->banksoal->find($id_banksoal);
-
-        if (!$banksoal || $banksoal['id_pengajar'] != session()->get('id_pengajar')) { // FIX
-            return redirect()->back()->with('error', 'Tidak diizinkan!');
-        }
-
-        $this->banksoal->delete($id_banksoal);
-
+        $this->banksoal->delete($id);
         return redirect()->to(base_url('dashboard/pengajar/banksoal'))
             ->with('success', 'Bank soal berhasil dihapus!');
     }

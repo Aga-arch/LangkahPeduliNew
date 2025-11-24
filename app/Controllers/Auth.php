@@ -63,7 +63,6 @@ class Auth extends BaseController
             ->groupEnd()
             ->first();
 
-
         if (!$user) {
             return redirect()->back()->with('error', 'Akun tidak ditemukan.');
         }
@@ -72,19 +71,22 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Password salah.');
         }
 
+        // Set session umum
         session()->set([
-            'userId'    => $user['id'],
             'username'  => $user['username'],
             'email'     => $user['email'],
             'role'      => $user['role'],
             'logged_in' => true,
         ]);
 
+        // Role khusus
         if ($user['role'] === 'admin') {
             return redirect()->to('dashboard/admin');
         }
 
         if ($user['role'] === 'pengajar') {
+            // SET SESSION KHUSUS PENGAJAR
+            session()->set('id_pengajar', $user['id']); 
             return redirect()->to('dashboard/pengajar');
         }
 
