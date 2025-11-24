@@ -1,27 +1,19 @@
 <?= $this->extend('layout/dashboard_pengajar') ?>
 <?= $this->section('content') ?>
 
-<h3>Tambah Bank Soal</h3>
+<h2>Tambah Bank Soal</h2>
 
 <form action="<?= base_url('dashboard/pengajar/banksoal/simpan') ?>" method="post">
+    <label>Nama Bank Soal</label><br>
+    <input type="text" name="nama_banksoal" required><br><br>
 
-    <div class="mb-3">
-        <label class="form-label">Nama Bank Soal</label>
-        <input type="text" name="nama_banksoal" class="form-control" required>
-    </div>
+    <label>Topik Pembelajaran</label><br>
+    <input type="text" name="topik_pembelajaran" required><br><br>
 
-    <div class="mb-3">
-        <label class="form-label">Topik Pembelajaran</label>
-        <input type="text" name="topik_pembelajaran" class="form-control" required>
-    </div>
+    <label>Mata Pelajaran</label><br>
+    <input type="text" name="mata_pelajaran" required><br><br>
 
-    <div class="mb-3">
-        <label class="form-label">Mata Pelajaran</label>
-        <input type="text" name="mata_pelajaran" class="form-control" required>
-    </div>
-
-    <button type="submit" class="btn btn-success">Simpan</button>
-    <a href="<?= base_url('dashboard/pengajar/banksoal') ?>" class="btn btn-secondary">Kembali</a>
+    <button type="submit">Simpan</button>
 </form>
 
 <?= $this->endSection() ?>
