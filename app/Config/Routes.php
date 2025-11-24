@@ -26,10 +26,14 @@ $routes->group('', function ($routes) {
 });
 
 /* Dashboard */
-$routes->group('dashboard', function ($routes) {
+    $routes->group('dashboard', function ($routes) {
 
     // Dashboard umum
     $routes->get('/', 'Dashboard::index');
+    
+    $routes->get('forum', 'Forum::index');
+    $routes->get('forum/detail/(:num)', 'Forum::detail/$1');
+    $routes->post('forum/komentar/(:num)', 'Forum::tambahKomentar/$1');
 
     // =========================
     // ADMIN
@@ -85,10 +89,6 @@ $routes->group('penerima', function ($routes) {
     $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
     $routes->get('penghargaan', 'Penghargaan::index');
 
-    // Forum
-    $routes->get('forum', 'Forum::index');
-    $routes->get('forum/detail/(:num)', 'Forum::detail/$1');
-    $routes->post('forum/komentar/(:num)', 'Forum::tambahKomentar/$1');
 });
 
 
