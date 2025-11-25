@@ -29,4 +29,8 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <?= $this->endSection() ?>
+=======
+<?= $this->endSection() ?>
+>>>>>>> 7e3be29d2326061659eff7a9b33d45dc1fc42973

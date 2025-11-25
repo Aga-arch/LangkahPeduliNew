@@ -35,4 +35,8 @@
     <a href="<?= base_url('dashboard/forum') ?>" class="btn btn-secondary btn-sm mt-3">Kembali</a>
 </div>
 
+<<<<<<< HEAD
 <?= $this->endSection() ?>
+=======
+<?= $this->endSection() ?>
+>>>>>>> 7e3be29d2326061659eff7a9b33d45dc1fc42973
