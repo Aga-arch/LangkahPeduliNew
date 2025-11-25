@@ -10,9 +10,12 @@ class Forum extends BaseController
     public function index()
     {
         $forumModel = new ForumModel();
-        $data['forums'] = $forumModel->getForumTerbaru();
+        $data['forums'] = $forumModel
+            ->where('status', 'aktif')
+            ->orderBy('tanggal', 'DESC')
+            ->findAll();
 
-        return view('dashboard/penerima/forum/index', $data);
+        return view('dashboard/forum/index', $data);
     }
 
     public function detail($id)
@@ -21,16 +24,18 @@ class Forum extends BaseController
         $komentarModel = new KomentarModel();
 
         $data['forum'] = $forumModel->find($id);
+
+        if (!$data['forum'] || $data['forum']['status'] != 'aktif') {
+            return redirect()->to(base_url('dashboard/forum'))
+                            ->with('error', 'Forum tidak ditemukan atau telah ditutup.');
+        }
+
         $data['komentar'] = $komentarModel
             ->where('forum_id', $id)
             ->orderBy('tanggal', 'ASC')
             ->findAll();
 
-        if (!$data['forum']) {
-            return redirect()->to(base_url('dashboard/penerima/forum'))->with('error', 'Forum tidak ditemukan.');
-        }
-
-        return view('dashboard/penerima/forum/detail', $data);
+        return view('dashboard/forum/detail', $data);
     }
 
     public function tambahKomentar($id)
@@ -42,7 +47,7 @@ class Forum extends BaseController
         $komentarModel = new KomentarModel();
         $komentarModel->insert([
             'forum_id' => $id,
-            'user_id'  => session()->get('userId'),
+            'user_id'  => session()->get('id'),
             'isi'      => $this->request->getPost('isi'),
             'tanggal'  => date('Y-m-d H:i:s')
         ]);

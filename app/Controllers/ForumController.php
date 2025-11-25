@@ -27,7 +27,7 @@ class ForumController extends BaseController
             'judul'      => $this->request->getPost('judul'),
             'konten'     => $this->request->getPost('konten'),
             'status'     => $this->request->getPost('status'),
-            'dibuat_oleh'=> session()->get('userId'),
+            'dibuat_oleh'=> session()->get('id'),
             'tanggal'    => date('Y-m-d H:i:s')
         ];
 

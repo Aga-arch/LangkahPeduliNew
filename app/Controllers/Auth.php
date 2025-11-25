@@ -73,6 +73,7 @@ class Auth extends BaseController
 
         // Set session umum
         session()->set([
+            'id'  => $user['id'],
             'username'  => $user['username'],
             'email'     => $user['email'],
             'role'      => $user['role'],
