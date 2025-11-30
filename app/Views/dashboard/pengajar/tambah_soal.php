@@ -4,34 +4,35 @@
 <h3>Tambah Soal - Bank Soal: <?= esc($banksoal['nama_banksoal']) ?></h3>
 
 <form action="<?= base_url('dashboard/pengajar/soal/simpan/'.$banksoal['id_banksoal']) ?>" method="post">
+    <?= csrf_field() ?>
     <div class="mb-3">
-        <label for="pertanyaan" class="form-label">Pertanyaan</label>
-        <textarea name="pertanyaan" id="pertanyaan" class="form-control" required></textarea>
+        <label for="isi_soal" class="form-label">Pertanyaan</label>
+        <textarea name="isi_soal" id="isi_soal" class="form-control" required></textarea>
     </div>
 
     <div class="mb-3">
-        <label for="jawaban_a" class="form-label">Opsi A</label>
-        <input type="text" name="jawaban_a" id="jawaban_a" class="form-control" required>
+        <label for="opsi1" class="form-label">Opsi A</label>
+        <input type="text" name="opsi1" id="opsi1" class="form-control" required>
     </div>
 
     <div class="mb-3">
-        <label for="jawaban_b" class="form-label">Opsi B</label>
-        <input type="text" name="jawaban_b" id="jawaban_b" class="form-control" required>
+        <label for="opsi2" class="form-label">Opsi B</label>
+        <input type="text" name="opsi2" id="opsi2" class="form-control" required>
     </div>
 
     <div class="mb-3">
-        <label for="jawaban_c" class="form-label">Opsi C</label>
-        <input type="text" name="jawaban_c" id="jawaban_c" class="form-control" required>
+        <label for="opsi3" class="form-label">Opsi C</label>
+        <input type="text" name="opsi3" id="opsi3" class="form-control" required>
     </div>
 
     <div class="mb-3">
-        <label for="jawaban_d" class="form-label">Opsi D</label>
-        <input type="text" name="jawaban_d" id="jawaban_d" class="form-control" required>
+        <label for="opsi4" class="form-label">Opsi D</label>
+        <input type="text" name="opsi4" id="opsi4" class="form-control" required>
     </div>
 
     <div class="mb-3">
-        <label for="kunci_jawaban" class="form-label">Jawaban Benar</label>
-        <select name="kunci_jawaban" id="kunci_jawaban" class="form-select" required>
+        <label for="jawaban" class="form-label">Jawaban Benar</label>
+        <select name="jawaban" id="jawaban" class="form-select" required>
             <option value="">-- Pilih Jawaban --</option>
             <option value="A">A</option>
             <option value="B">B</option>

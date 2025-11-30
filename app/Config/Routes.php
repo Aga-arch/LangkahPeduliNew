@@ -26,15 +26,11 @@ $routes->group('', function ($routes) {
 });
 
 /* Dashboard */
-    $routes->group('dashboard', function ($routes) {
+$routes->group('dashboard', function ($routes) {
 
     // Dashboard umum
     $routes->get('/', 'Dashboard::index');
-<<<<<<< HEAD
     // Forum
-=======
-    
->>>>>>> 7e3be29d2326061659eff7a9b33d45dc1fc42973
     $routes->get('forum', 'Forum::index');
     $routes->get('forum/detail/(:num)', 'Forum::detail/$1');
     $routes->post('forum/komentar/(:num)', 'Forum::tambahKomentar/$1');
@@ -77,33 +73,28 @@ $routes->group('pengajar', function ($routes) {
 
     $routes->get('materi/hapus/(:num)', 'Materi::hapus/$1');
 
-
-
-
-
     // Quiz
     $routes->get('quiz', 'Pengajar::quiz');
 
       // Bank soal
-    $routes->get('banksoal', 'Banksoal::index');                  // List bank soal
-    $routes->get('banksoal/tambah', 'Banksoal::create');          // Form tambah bank soal
-    $routes->post('banksoal/simpan', 'Banksoal::store');          // Simpan bank soal
+$routes->get('banksoal', 'Banksoal::index');
+$routes->get('banksoal/tambah', 'Banksoal::create');
+$routes->post('banksoal/simpan', 'Banksoal::store');
 
 $routes->get('banksoal/detail/(:num)', 'Banksoal::detail/$1');
-    $routes->get('soal/(:num)', 'Soal::create/$1');               // Tambah soal baru untuk bank soal tertentu
-    $routes->post('soal/simpan/(:num)', 'Soal::store/$1');        // Simpan soal
+  $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
+        $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');
 
-    $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');    // Edit bank soal
-    $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');// Update bank soal
-    $routes->get('banksoal/hapus/(:num)', 'Banksoal::delete/$1'); // Hapus bank soal
+$routes->get('banksoal/hapus/(:num)', 'Banksoal::hapus/$1');
 
-   $routes->get('soal/tambah/(:num)', 'Soal::create/$1');  // <- id_banksoal
-    $routes->post('soal/simpan/(:num)', 'Soal::store/$1');  // <- id_banksoal
+// SOAL
+$routes->get('soal/tambah/(:num)', 'Soal::create/$1');         // :num = id_banksoal
+    $routes->post('soal/simpan/(:num)', 'Soal::store/$1');        // simpan soal untuk banksoal tertentu
+    $routes->get('soal/edit/(:num)', 'Soal::edit/$1');            // edit soal
+$routes->post('soal/update/(:num)', 'Soal::update/$1'); // Update via POST
+    $routes->get('soal/delete/(:num)', 'Soal::delete/$1');        // hapus soal
+   // hapus soal
 
-    // Edit & delete soal
-    $routes->get('soal/edit/(:num)', 'Soal::edit/$1');
-    $routes->post('soal/update/(:num)', 'Soal::update/$1');
-    $routes->get('soal/delete/(:num)', 'Soal::delete/$1');
 });
     // =========================
 // PENERIMA
@@ -116,13 +107,7 @@ $routes->group('penerima', function ($routes) {
     $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
     $routes->get('penghargaan', 'Penghargaan::index');
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 7e3be29d2326061659eff7a9b33d45dc1fc42973
 });
-
-
 
     // =========================
     // QUIZ umum

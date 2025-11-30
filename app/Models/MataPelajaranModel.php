@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class MataPelajaranModel extends Model
 {
-    protected $table = 'mata_pelajaran';
+    protected $table = 'materi';
     protected $primaryKey = 'id';
     protected $allowedFields = ['kode_mapel', 'nama_mapel', 'deskripsi', 'pengajar', 'created_at'];
 }

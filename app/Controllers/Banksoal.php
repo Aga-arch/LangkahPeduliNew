@@ -88,12 +88,39 @@ class Banksoal extends BaseController
 
         return view('dashboard/pengajar/banksoal_detail', $data);
     }
+  // =========================
+    //  METHOD EDIT
+    // =========================
+    public function edit($id)
+    {
+        $data = [
+            'banksoal' => $this->banksoal->find($id)
+        ];
+
+        return view('dashboard/pengajar/edit_banksoal', $data);
+    }
+
+    // =========================
+    //  METHOD UPDATE
+    // =========================
+    public function update($id)
+    {
+        $data = [
+            'nama_banksoal' => $this->request->getPost('nama_banksoal'),
+            'topik_pembelajaran' => $this->request->getPost('topik_pembelajaran'),
+            'mata_pelajaran' => $this->request->getPost('mata_pelajaran'),
+        ];
+
+        $this->banksoal->update($id, $data);
+
+        return redirect()->to('dashboard/pengajar/banksoal')->with('success', 'Bank soal diperbarui!');
+    }
 
     // HAPUS BANK SOAL
-    public function delete($id)
-    {
-        $this->banksoal->delete($id);
-        return redirect()->to(base_url('dashboard/pengajar/banksoal'))
-            ->with('success', 'Bank soal berhasil dihapus!');
-    }
+  public function hapus($id)
+{
+    $this->banksoal->delete($id);
+    return redirect()->to('dashboard/pengajar/banksoal')->with('success','Dihapus');
+}
+
 }

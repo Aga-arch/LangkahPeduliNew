@@ -11,11 +11,11 @@ class SoalModel extends Model
 
     protected $allowedFields = [
         'id_banksoal',
-        'pertanyaan',
-        'opsi_a',
-        'opsi_b',
-        'opsi_c',
-        'opsi_d',
+        'isi_soal',
+        'opsi1',
+        'opsi2',
+        'opsi3',
+        'opsi4',
         'jawaban',
         'created_at'
     ];

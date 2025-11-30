@@ -168,7 +168,7 @@
     <h4 class="section-title"><i class="bi bi-book"></i> Topik Pembelajaran</h4>
 
     <?php if (!empty($topikList)): ?>
-        <?php foreach ($topikList as $t): ?>
+        <?php foreach ($topikList as $t): ?> 
             <div class="topik-card d-flex justify-content-between align-items-start flex-wrap">
                 <div>
                     <h5 class="topik-title"><?= esc($t['judul_topik']) ?></h5>

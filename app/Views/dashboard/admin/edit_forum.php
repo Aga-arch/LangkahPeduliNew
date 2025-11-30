@@ -1,40 +1,32 @@
-<?= $this->extend('layout/layout_admin') ?>
+<?= $this->extend('layout/dashboard_layout') ?>
 <?= $this->section('content') ?>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-lite.min.css" rel="stylesheet">
+<div class="container py-4">
+    <h3 class="fw-bold mb-4"><i class="bi bi-chat-text"></i> Forum Diskusi</h3>
 
-<div class="container-fluid px-4">
-    <h3 class="fw-bold mb-4">Edit Forum</h3>
+    <div class="row g-3">
+        <?php if (empty($forums)): ?>
+            <p>Tidak ada forum tersedia.</p>
+        <?php else: ?>
+            <?php foreach ($forums as $forum): ?>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3 h-100">
+                        <?php if ($forum['gambar']): ?>
+                            <img src="<?= base_url('uploads/forum/' . $forum['gambar']) ?>"
+                                 style="height:130px; width:100%; object-fit:cover; border-radius:8px;">
+                        <?php endif; ?>
 
-    <form method="post" action="<?= base_url('dashboard/admin/update-forum/'.$forum['id']) ?>" enctype="multipart/form-data">
-        <?= csrf_field() ?>
+                        <h5 class="fw-bold mt-2"><?= esc($forum['judul']) ?></h5>
+                        <p class="small text-muted"><?= date('d M Y H:i', strtotime($forum['tanggal'])) ?></p>
 
-        <div class="mb-3">
-            <label class="form-label">Judul Forum</label>
-            <input type="text" name="judul" value="<?= esc($forum['judul']) ?>" class="form-control" required>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Isi Forum</label>
-            <textarea id="konten" name="konten"><?= esc($forum['konten']) ?></textarea>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Status</label>
-            <select name="status" class="form-select">
-                <option value="aktif" <?= $forum['status']=='aktif'?'selected':'' ?>>Aktif</option>
-                <option value="tutup" <?= $forum['status']=='tutup'?'selected':'' ?>>Ditutup</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Gambar (jika ingin mengganti)</label>
-            <input type="file" name="gambar" class="form-control" accept="image/*">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="<?= base_url('dashboard/admin/kelola-forum') ?>" class="btn btn-secondary">Batal</a>
-    </form>
+                        <a href="<?= base_url('dashboard/forum/detail/' . $forum['id']) ?>" class="btn btn-primary btn-sm mt-auto">
+                            Lihat Forum
+                        </a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-lite.min.js"></script>
