@@ -1,75 +1,68 @@
 <?= $this->extend('layout/dashboard_pengajar') ?>
 <?= $this->section('content') ?>
 
-<h3>Tambah Quiz</h3>
-<a href="<?= base_url('dashboard/pengajar/quiz') ?>">&laquo; Kembali ke Daftar Quiz</a>
+<div class="container py-5">
+    <h3 class="fw-bold header-gradient mb-4">Tambah Quiz</h3>
+    <a href="<?= base_url('dashboard/pengajar/quiz') ?>" class="text-decoration-none mb-3 d-inline-block">&laquo; Kembali ke Daftar Quiz</a>
 
-<form action="<?= base_url('dashboard/pengajar/quiz/simpan') ?>" method="post" onsubmit="return cekSoal()">
-    <?= csrf_field() ?>
+    <div class="card glass-card shadow-lg p-4">
+        <form action="<?= base_url('dashboard/pengajar/quiz/simpan') ?>" method="post" onsubmit="return cekSoal()">
+            <?= csrf_field() ?>
 
-    <div class="mb-3">
-        <label>Nama Quiz</label>
-        <input type="text" name="judul_quiz" class="form-control" required>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Nama Quiz</label>
+                <input type="text" name="judul_quiz" class="form-control input-glass" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Deskripsi</label>
+                <textarea name="deskripsi" class="form-control input-glass" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Waktu pengerjaan (menit)</label>
+                <input type="number" name="waktu_menit" class="form-control input-glass" min="1" required>
+            </div>
+
+            <hr>
+            <h5>Pilih Bank Soal</h5>
+            <div class="mb-3">
+                <select id="bankSelect" class="form-select input-glass">
+                    <option value="">-- Pilih Bank Soal --</option>
+                    <?php foreach ($banksoal as $b): ?>
+                        <option value="<?= $b['id_banksoal'] ?>"><?= esc($b['nama_banksoal']) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-gradient btn-hover mb-3" id="btnAddBank">Tambah Bank Soal ke Quiz</button>
+
+            <div id="listBankContainer"></div>
+
+            <hr>
+            <button type="submit" class="btn btn-primary btn-gradient btn-hover">Simpan Quiz</button>
+        </form>
     </div>
-
-    <div class="mb-3">
-        <label>Deskripsi</label>
-        <textarea name="deskripsi" class="form-control" rows="3"></textarea>
-    </div>
-
-    <div class="mb-3">
-        <label>Waktu pengerjaan (menit)</label>
-        <input type="number" name="waktu_menit" class="form-control" min="1" required>
-    </div>
-
-    <hr>
-    <h5>Pilih Bank Soal</h5>
-
-    <div class="mb-3">
-        <select id="bankSelect" class="form-control">
-            <option value="">-- Pilih Bank Soal --</option>
-            <?php foreach ($banksoal as $b): ?>
-                <option value="<?= $b['id_banksoal'] ?>"><?= esc($b['nama_banksoal']) ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-
-    <button type="button" class="btn btn-success mb-3" id="btnAddBank">Tambah Bank Soal ke Quiz</button>
-
-    <div id="listBankContainer"></div>
-
-    <hr>
-    <button type="submit" class="btn btn-primary">Simpan Quiz</button>
-</form>
+</div>
 
 <script>
 let bankCount = 0;
-
 document.getElementById("btnAddBank").onclick = function() {
     let id_bank = document.getElementById("bankSelect").value;
-    if (id_bank === "") {
-        alert("Pilih bank soal dulu!");
-        return;
-    }
+    if (id_bank === "") { alert("Pilih bank soal dulu!"); return; }
 
     bankCount++;
     let container = document.getElementById("listBankContainer");
     let blockId = "bankBlock" + bankCount;
 
     let html = `
-        <div class="card p-3 mb-3" id="${blockId}">
-            <h6>Bank Soal ID: ${id_bank}</h6>
+        <div class="card p-3 mb-3 glass-card" id="${blockId}">
+            <h6 class="fw-semibold">Bank Soal ID: ${id_bank}</h6>
             <input type="hidden" name="banksoal[]" value="${id_bank}">
-
             <label>Pilih jumlah soal:</label>
-            <input type="number" class="form-control jumlahInput" data-bank="${id_bank}" min="1">
-
+            <input type="number" class="form-control jumlahInput input-glass" data-bank="${id_bank}" min="1">
             <div class="mt-2 soalList" id="soalList${bankCount}"></div>
-
-            <button type="button" class="btn btn-danger mt-2"
-                onclick="document.getElementById('${blockId}').remove()">
-                Hapus
-            </button>
+            <button type="button" class="btn btn-danger btn-hover mt-2" onclick="document.getElementById('${blockId}').remove()">Hapus</button>
         </div>
     `;
 
@@ -79,40 +72,30 @@ document.getElementById("btnAddBank").onclick = function() {
 
 function loadSoal(id_bank, index) {
     fetch("<?= base_url('dashboard/pengajar/quiz/get-soal/') ?>" + id_bank, {
-        headers: {
-            "X-Requested-With": "XMLHttpRequest",
-            "X-CSRF-TOKEN": "<?= csrf_hash() ?>"
-        }
+        headers: { "X-Requested-With": "XMLHttpRequest", "X-CSRF-TOKEN": "<?= csrf_hash() ?>" }
     })
     .then(res => res.json())
     .then(data => {
         let listDiv = document.getElementById("soalList" + index);
         let html = "<label>Pilih soal:</label><br>";
-
-        data.forEach(soal => {
-            html += `
-                <div>
-                    <input type="checkbox" name="soal_terpilih[]" value="${soal.id_soal}">
-                    ${soal.pertanyaan}
-                </div>
-            `;
-        });
-
+        data.forEach(soal => { html += `<div><input type="checkbox" name="soal_terpilih[]" value="${soal.id_soal}"> ${soal.pertanyaan}</div>`; });
         listDiv.innerHTML = html;
     })
-    .catch(() => alert("Gagal mengambil soal dari server."));
+    .catch(()=> alert("Gagal mengambil soal dari server."));
 }
 
-
-// Validasi sebelum simpan quiz
 function cekSoal() {
     const soalDipilih = document.querySelectorAll('input[name="soal_terpilih[]"]:checked');
-    if (soalDipilih.length === 0) {
-        alert("Pilih minimal 1 soal sebelum menyimpan quiz!");
-        return false;
-    }
+    if (soalDipilih.length === 0) { alert("Pilih minimal 1 soal sebelum menyimpan quiz!"); return false; }
     return true;
 }
 </script>
 
-<?= $this->endSection() ?>
+<style>
+.glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border:1px solid rgba(0,123,255,0.15); border-radius:1rem;}
+.input-glass { background: rgba(255,255,255,0.9); border:1px solid rgba(0,123,255,0.3); border-radius:0.5rem; padding:0.5rem 1rem; transition:all 0.3s ease;}
+.input-glass:focus { border-color:#4facfe; box-shadow:0 0 8px rgba(79,172,254,0.4); outline:none; background: rgba(255,255,255,0.95);}
+.btn-gradient{background: linear-gradient(90deg,#4facfe,#00f2fe);color:#fff;font-weight:600;transition:all 0.3s ease;border:none;}
+.btn-gradient:hover{transform: translateY(-2px);box-shadow:0 6px 15px rgba(0,123,255,0.3);}
+.btn-hover{transition:all 0.3s ease;}
+.header-gradient{background: linear-gradient(90deg,#4facfe,#00f2fe);-webkit-background-clip:text;
