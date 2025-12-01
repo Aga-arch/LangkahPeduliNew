@@ -6,19 +6,21 @@ use CodeIgniter\Model;
 
 class QuizModel extends Model
 {
-    protected $table = 'quiz';
-    protected $primaryKey = 'id';
-    protected $allowedFields = [
-        'mapel_id', 'judul_quiz', 'deskripsi_quiz', 'jumlah_soal', 'tingkat_kesulitan', 'created_at'
-    ];
+ protected $table = 'quiz';
+protected $primaryKey = 'id_quiz';
+protected $allowedFields = ['judul_quiz', 'deskripsi', 'waktu_menit', 'created_at'];
 
-    /**
-     * Ambil semua quiz berdasarkan ID mata pelajaran
-     */
-    public function getQuizByMapel($mapelId)
-    {
-        return $this->where('mapel_id', $mapelId)
-                    ->orderBy('created_at', 'DESC')
-                    ->findAll();
-    }
+public function getQuizWithBank()
+{
+    return $this->select('quiz.*, GROUP_CONCAT(DISTINCT banksoal.nama_banksoal SEPARATOR ", ") as nama_banksoal')
+        ->join('quiz_detail', 'quiz_detail.id_quiz = quiz.id_quiz', 'left')
+        ->join('soal', 'soal.id_soal = quiz_detail.id_soal', 'left')
+        ->join('banksoal', 'banksoal.id_banksoal = soal.id_banksoal', 'left')
+        ->groupBy('quiz.id_quiz')
+        ->findAll();
+}
+
+
+
+    public $useTimestamps = false;
 }

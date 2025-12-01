@@ -74,7 +74,28 @@ $routes->group('pengajar', function ($routes) {
     $routes->get('materi/hapus/(:num)', 'Materi::hapus/$1');
 
     // Quiz
-    $routes->get('quiz', 'Pengajar::quiz');
+// LIST QUIZ
+$routes->get('quiz', 'Pengajar::quiz');
+
+// FORM TAMBAH QUIZ
+$routes->get('quiz/tambah', 'Pengajar::tambah_quiz');
+
+// SIMPAN QUIZ BARU
+$routes->post('quiz/simpan', 'Quiz::simpan');
+
+// AMBIL SOAL
+$routes->get('quiz/get-soal/(:num)', 'Pengajar::getSoal/$1');
+
+// EDIT
+$routes->get('quiz/edit/(:num)', 'Pengajar::quizEdit/$1');
+$routes->post('quiz/update/(:num)', 'Pengajar::quizUpdate/$1');
+
+// DETAIL
+$routes->get('quiz/detail/(:num)', 'Pengajar::quizDetail/$1');
+
+// HAPUS
+$routes->get('quiz/hapus/(:num)', 'Pengajar::quizHapus/$1');
+
 
       // Bank soal
 $routes->get('banksoal', 'Banksoal::index');
