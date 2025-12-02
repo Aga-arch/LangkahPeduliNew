@@ -15,7 +15,8 @@ class ForumModel extends Model
         'tanggal',
         'dibuat_oleh',
         'status',
-        'gambar' // ← tambahkan ini
+        'jumlah_reply',   // ← WAJIB tambahkan ini!
+        'gambar'
     ];
 
     protected $returnType = 'array';

@@ -101,9 +101,6 @@
                             <a href="<?= base_url('dashboard/admin/detail-akun/'.$user['id']) ?>" class="action-btn action-view">
                                 <i class="bi bi-eye-fill"></i>
                             </a>
-                            <a href="<?= base_url('dashboard/admin/edit-akun/'.$user['id']) ?>" class="action-btn action-edit">
-                                <i class="bi bi-pencil-square"></i>
-                            </a>
                             <a href="<?= base_url('dashboard/admin/delete-akun/'.$user['id']) ?>"
                                onclick="return confirm('Yakin ingin menghapus akun ini?')" class="action-btn action-delete">
                                 <i class="bi bi-trash-fill"></i>

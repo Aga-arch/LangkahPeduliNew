@@ -99,9 +99,6 @@
             <a href="<?= base_url('dashboard/admin/kelola-akun') ?>" class="btn btn-back">
                 <i class="bi bi-arrow-left"></i> Kembali
             </a>
-            <a href="<?= base_url('dashboard/admin/edit-akun/'.$user['id']) ?>" class="btn btn-edit">
-                <i class="bi bi-pencil-square"></i> Edit
-            </a>
         </div>
     </div>
 </div>

@@ -14,6 +14,7 @@ $routes->setAutoRoute(true);
 /* Home */
 $routes->get('/', 'Home::index');
 
+
 /* Auth */
 $routes->group('', function ($routes) {
     $routes->get('login', 'Auth::login');
@@ -35,6 +36,7 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('forum', 'Forum::index');
     $routes->get('forum/detail/(:num)', 'Forum::detail/$1');
     $routes->post('forum/komentar/(:num)', 'Forum::tambahKomentar/$1');
+    $routes->get('forum/komentar/hapus/(:num)', 'Forum::hapusKomentar/$1');
 
     // =========================
     // ADMIN
