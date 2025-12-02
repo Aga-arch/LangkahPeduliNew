@@ -29,17 +29,22 @@
                                     <td><?= esc($q['judul_quiz']) ?></td>
                                     <td><?= esc($q['deskripsi']) ?></td>
                                     <td><?= $q['waktu_menit'] ?> menit</td>
-                                    <td>
-                                        <a href="<?= base_url('dashboard/pengajar/quiz/detail/'.$q['id_quiz']) ?>" class="btn btn-outline-info btn-sm btn-icon" data-bs-toggle="tooltip" title="Detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>
-                                        <a href="<?= base_url('dashboard/pengajar/quiz/edit/'.$q['id_quiz']) ?>" class="btn btn-outline-warning btn-sm btn-icon" data-bs-toggle="tooltip" title="Edit">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a>
-                                        <a href="<?= base_url('dashboard/pengajar/quiz/hapus/'.$q['id_quiz']) ?>" onclick="return confirm('Hapus quiz ini?')" class="btn btn-outline-danger btn-sm btn-icon" data-bs-toggle="tooltip" title="Hapus">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                    </td>
+                                  <td>
+    <a href="<?= base_url('dashboard/pengajar/quiz/detail/'.$q['id_quiz']) ?>" class="btn btn-outline-info btn-sm btn-icon" data-bs-toggle="tooltip" title="Detail">
+        <i class="bi bi-eye"></i>
+    </a>
+    <?php if($q['pengajar_id'] == session()->get('id')): ?>
+        <a href="<?= base_url('dashboard/pengajar/quiz/edit/'.$q['id_quiz']) ?>" class="btn btn-outline-warning btn-sm btn-icon" data-bs-toggle="tooltip" title="Edit">
+            <i class="bi bi-pencil-square"></i>
+        </a>
+        <a href="<?= base_url('dashboard/pengajar/quiz/hapus/'.$q['id_quiz']) ?>" onclick="return confirm('Hapus quiz ini?')" class="btn btn-outline-danger btn-sm btn-icon" data-bs-toggle="tooltip" title="Hapus">
+            <i class="bi bi-trash"></i>
+        </a>
+    <?php else: ?>
+        <span class="text-muted fst-italic ms-2">Tidak bisa diedit</span>
+    <?php endif; ?>
+</td>
+
                                 </tr>
                             <?php endforeach; ?>
                         <?php else : ?>

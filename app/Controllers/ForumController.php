@@ -70,10 +70,15 @@ class ForumController extends BaseController
         return redirect()->to(base_url('dashboard/admin/kelola-forum'))->with('success', 'Forum berhasil diperbarui');
     }
 
-    public function hapusForum($id)
-    {
-        $forumModel = new ForumModel();
-        $forumModel->delete($id);
-        return redirect()->to(base_url('dashboard/admin/kelola-forum'))->with('success', 'Forum berhasil dihapus');
+    public function hapusForum($id = null)
+{
+    if (!$id || $id == 0) {
+        return redirect()->back()->with('error', 'ID tidak valid');
     }
+
+    $forumModel = new ForumModel();
+    $forumModel->where('id', $id)->delete();
+
+    return redirect()->to(base_url('dashboard/admin/kelola-forum'));
+}
 }

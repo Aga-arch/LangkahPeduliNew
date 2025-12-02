@@ -31,6 +31,14 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Username atau email sudah terdaftar.');
         }
 
+        // VALIDASI PASSWORD
+        if (strlen($password) < 8 ||
+            !preg_match('/[A-Z]/', $password) ||
+            !preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password)) 
+        {
+            return redirect()->back()->with('error', 'Password harus minimal 8 karakter, mengandung huruf kapital dan karakter unik.');
+        }
+
         $userModel->insert([
             'username' => $username,
             'email'    => $email,
@@ -71,23 +79,22 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Password salah.');
         }
 
-        // Set session umum
+        // SET SESSION
         session()->set([
-            'id'  => $user['id'],
+            'id'        => $user['id'],
             'username'  => $user['username'],
             'email'     => $user['email'],
             'role'      => $user['role'],
             'logged_in' => true,
         ]);
 
-        // Role khusus
+        // REDIRECT BERDASARKAN ROLE
         if ($user['role'] === 'admin') {
             return redirect()->to('dashboard/admin');
         }
 
         if ($user['role'] === 'pengajar') {
-            // SET SESSION KHUSUS PENGAJAR
-            session()->set('id_pengajar', $user['id']); 
+            session()->set('id_pengajar', $user['id']);
             return redirect()->to('dashboard/pengajar');
         }
 

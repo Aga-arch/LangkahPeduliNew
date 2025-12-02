@@ -12,6 +12,8 @@ class Quiz extends BaseController
 {
     public function index()
 {
+    $session = session();
+    $pengajar_id = $session->get('id'); // atau username
     $quizModel = new QuizModel();
     $data['quiz']  = $quizModel->getQuizWithBank(); // ambil data quiz + bank soal
         return view('dashboard/pengajar/quiz', $data);
@@ -66,5 +68,21 @@ return redirect()->to('dashboard/pengajar/quiz')->with('success', 'Quiz berhasil
         $soalModel = new \App\Models\SoalModel();
         $soal = $soalModel->where('id_banksoal', $id_bank)->findAll();
         return $this->response->setJSON($soal);
+    }
+
+    public function search()
+    {
+        $keyword = $this->request->getGet('keyword');
+
+        $quizModel = new QuizModel();
+        $result = $quizModel->searchQuiz($keyword);
+
+        $data = [
+            'title' => 'Hasil Pencarian Quiz',
+            'quiz' => $result,
+            'keyword' => $keyword
+        ];
+
+        return view('dashboard/penerima/quiz/index', $data);
     }
 }

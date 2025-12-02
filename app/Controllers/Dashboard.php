@@ -138,7 +138,7 @@ public function daftarMapel()
     $data = [
         'title'    => 'Daftar Mata Pelajaran',
         'username' => session()->get('username'),
-        'mapel'    => $mapelModel->orderBy('id', 'ASC')->findAll()
+        'materi'    => $mapelModel->orderBy('id', 'ASC')->findAll()
     ];
 
     // halaman daftar mapel seperti di screenshot kamu
@@ -158,9 +158,9 @@ public function daftarMapel()
         $keyword = $this->request->getGet('keyword');
         $mapelModel = new MataPelajaranModel();
 
-        // cari berdasarkan nama_mapel atau pengajar
+        // cari berdasarkan judul_materi atau pengajar
         $result = $mapelModel
-            ->like('nama_mapel', $keyword)
+            ->like('judul_materi', $keyword)
             ->orLike('pengajar', $keyword)
             ->findAll();
 

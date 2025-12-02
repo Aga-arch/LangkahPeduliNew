@@ -79,7 +79,7 @@ class AdminController extends BaseController
         $userModel = new UserModel();
 
         // Ambil ID user yang sedang login
-        $currentUserId = session()->get('userId');  // ← Perbaikan di sini
+        $currentUserId = session()->get('userId');
 
         if ($id == $currentUserId) {
             return redirect()->back()->with('error', 'Anda tidak dapat menghapus akun Anda sendiri');

@@ -21,8 +21,8 @@ class MataPelajaran extends BaseController
     public function store()
     {
         $prefix = $this->request->getPost('prefix');
-        $nama = $this->request->getPost('nama_mapel');
-        $deskripsi = $this->request->getPost('deskripsi');
+        $nama = $this->request->getPost('judul_materi');
+        $deskripsi = $this->request->getPost('isi_materi');
 
         // cek kode urut terakhir berdasarkan prefix
         $last = $this->mapel->getLastUrut($prefix);

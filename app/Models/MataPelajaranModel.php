@@ -8,5 +8,5 @@ class MataPelajaranModel extends Model
 {
     protected $table = 'materi';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['kode_mapel', 'nama_mapel', 'deskripsi', 'pengajar', 'created_at'];
+    protected $allowedFields = ['id_kategori', 'judul_materi', 'isi_materi','file', 'pengajar', 'created_at'];
 }

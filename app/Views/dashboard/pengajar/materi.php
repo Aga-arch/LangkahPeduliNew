@@ -10,7 +10,7 @@
             <i class="bi bi-plus-circle"></i> Tambah Materi Baru
         </a>
     </div>
-
+    
     <div class="card glass-card shadow-lg p-3">
         <table class="table table-bordered table-hover align-middle">
             <thead class="table-light">
@@ -31,17 +31,24 @@
                             <td><?= $index + 1 ?></td>
                             <td><?= esc($row['nama_kategori']) ?></td>
                             <td><?= esc($row['judul_materi']) ?></td>
-                            <td><?= esc($row['isi_materi']) ?></td>
+                            <!-- Menampilkan isi materi dengan HTML aktif -->
+                            <td><?= $row['isi_materi'] ?></td>
                             <td><?= esc($row['pengajar']) ?></td>
                             <td><?= esc($row['created_at']) ?></td>
                             <td>
+                                <!-- Tombol lihat selalu muncul -->
+                                <a href="<?= base_url('dashboard/pengajar/materi/detail/'.$row['id']) ?>" 
+                                   class="btn btn-info btn-sm btn-hover">Lihat</a>
+
+                                <!-- Edit/Hapus hanya jika pembuat materi -->
                                 <?php if($row['pengajar'] == $username): ?>
-                                    <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$row['id']) ?>" class="btn btn-primary btn-sm btn-hover">Edit</a>
+                                    <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$row['id']) ?>" 
+                                       class="btn btn-primary btn-sm btn-hover">Edit</a>
                                     <a href="<?= base_url('dashboard/pengajar/materi/hapus/'.$row['id']) ?>" 
                                        class="btn btn-danger btn-sm btn-hover"
                                        onclick="return confirm('Yakin ingin menghapus materi ini?')">Hapus</a>
                                 <?php else: ?>
-                                    <span class="text-muted">Tidak bisa diedit</span>
+                                    <span class="text-muted fst-italic ms-2">Tidak bisa diedit</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -57,12 +64,50 @@
 </div>
 
 <style>
-.glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-radius:1rem; border:1px solid rgba(0,123,255,0.15);}
+/* Glass card dan hover effect */
+.glass-card { 
+    background: rgba(255,255,255,0.85); 
+    backdrop-filter: blur(10px); 
+    border-radius:1rem; 
+    border:1px solid rgba(0,123,255,0.15);
+}
 .table-hover tbody tr:hover { background: rgba(79,172,254,0.1);}
-.btn-gradient{background: linear-gradient(90deg,#4facfe,#00f2fe);color:#fff;font-weight:600;border:none;transition:all 0.3s ease;}
-.btn-gradient:hover{transform: translateY(-2px);box-shadow:0 6px 15px rgba(0,123,255,0.3);}
+.btn-gradient{
+    background: linear-gradient(90deg,#4facfe,#00f2fe);
+    color:#fff;
+    font-weight:600;
+    border:none;
+    transition:all 0.3s ease;
+}
+.btn-gradient:hover{
+    transform: translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,123,255,0.3);
+}
 .btn-hover{transition:all 0.3s ease;}
-.header-gradient{background: linear-gradient(90deg,#4facfe,#00f2fe);-webkit-background-clip:text;color:transparent;}
+.header-gradient{
+    background: linear-gradient(90deg,#4facfe,#00f2fe);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Styling isi materi agar tetap rapi */
+td {
+    vertical-align: top;
+}
+td p {
+    margin: 0 0 5px 0;
+}
+td b { font-weight: bold; }
+td i { font-style: italic; }
+td u { text-decoration: underline; }
+
+/* Styling tombol Lihat/Edit/Hapus */
+.btn-info { background:#17a2b8; border:none; transition:all 0.3s ease;}
+.btn-info:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(23,162,184,0.3);}
+.btn-primary { transition:all 0.3s ease;}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(0,123,255,0.3);}
+.btn-danger { transition:all 0.3s ease;}
+.btn-danger:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(220,53,69,0.3);}
 </style>
 
 <?= $this->endSection() ?>

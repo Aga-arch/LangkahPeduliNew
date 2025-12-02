@@ -130,7 +130,7 @@ header a:hover { text-decoration:underline; color:#ffeb3b; }
     animation: strikeEffect 0.8s ease-out forwards;
 }
 @keyframes strikeEffect {
-    0% { opacity:0; transform: translateX(0) rotate(-15deg) scale(0); }
+    0% { opacity:0; transform: translateX(0px) rotate(-15deg) scale(0); }
     50% { opacity:1; transform: translateX(50px) rotate(-15deg) scale(1.2); }
     100% { opacity:0; transform: translateX(100px) rotate(-15deg) scale(1); }
 }
@@ -177,6 +177,20 @@ header a:hover { text-decoration:underline; color:#ffeb3b; }
 }
 .card { transition: transform 0.5s ease, box-shadow 0.5s ease; }
 .card:hover { transform: translateY(-5px) scale(1.03); box-shadow:0 15px 35px rgba(66,165,245,0.6); }
+
+/* ================= KOF LOGO FLOATING ================= */
+.kof-logo {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    opacity:0.7;
+    animation: floatLogo linear infinite;
+}
+@keyframes floatLogo {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
 
 </style>
 </head>
@@ -262,7 +276,7 @@ setInterval(kofStrike,5000);
 
 // ================= CURSOR NEON =================
 document.addEventListener('mousemove', e=>{
-    for(let i=0;i<2;i++){ // trail effect
+    for(let i=0;i<2;i++){
         const cursor = document.createElement('div');
         cursor.className='cursor-hover';
         cursor.style.left=(e.clientX + Math.random()*4 -2)+'px';
@@ -271,6 +285,19 @@ document.addEventListener('mousemove', e=>{
         setTimeout(()=>{ cursor.remove(); },700);
     }
 });
+
+// ================= KOF LOGO FLOATING =================
+function spawnKofLogo(){
+    const logo = document.createElement('img');
+    logo.src = "<?= base_url('../images/kof_logo.png') ?>"; // ganti dengan logo KOF
+    logo.className = 'kof-logo';
+    logo.style.left = Math.random() * (window.innerWidth - 80) + 'px';
+    logo.style.top = Math.random() * (window.innerHeight - 80) + 'px';
+    logo.style.animationDuration = (4 + Math.random()*3)+'s';
+    document.body.appendChild(logo);
+    setTimeout(()=>{ logo.remove(); }, 8000);
+}
+setInterval(spawnKofLogo, 1000); // spawn logo tiap 1 detik
 </script>
 </body>
 </html>
