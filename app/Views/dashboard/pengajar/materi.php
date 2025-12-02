@@ -29,14 +29,22 @@
                     <?php foreach ($materi as $index => $row): ?>
                         <tr>
                             <td><?= $index + 1 ?></td>
-                            <td><?= esc($row['nama_kategori']) ?></td>
-                            <td><?= esc($row['judul_materi']) ?></td>
-                            <td><?= esc($row['isi_materi']) ?></td>
-                            <td><?= esc($row['pengajar']) ?></td>
-                            <td><?= esc($row['created_at']) ?></td>
+                            <td><?= $row['nama_kategori'] ?></td>
+                            <td><?= $row['judul_materi'] ?></td>
+
+                            <!-- TAMPILKAN SEMUA HTML MATERI -->
+                            <td style="max-width: 350px; white-space: normal;">
+                                <?= $row['isi_materi'] ?>
+                            </td>
+
+                            <td><?= $row['pengajar'] ?></td>
+                            <td><?= $row['created_at'] ?></td>
+
                             <td>
                                 <?php if($row['pengajar'] == $username): ?>
-                                    <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$row['id']) ?>" class="btn btn-primary btn-sm btn-hover">Edit</a>
+                                    <a href="<?= base_url('dashboard/pengajar/materi/edit/'.$row['id']) ?>" 
+                                       class="btn btn-primary btn-sm btn-hover">Edit</a>
+
                                     <a href="<?= base_url('dashboard/pengajar/materi/hapus/'.$row['id']) ?>" 
                                        class="btn btn-danger btn-sm btn-hover"
                                        onclick="return confirm('Yakin ingin menghapus materi ini?')">Hapus</a>

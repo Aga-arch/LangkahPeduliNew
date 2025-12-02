@@ -600,3 +600,1003 @@ DEBUG - 2025-12-02 13:29:14 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-12-02 13:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-02 13:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-02 13:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:37:23 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'langkahpeduli' in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'langkahpeduli', 3306, '', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Auth.php(64): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'langkahpeduli' in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Auth.php(64): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+#7 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 14:37:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'langkahpeduli'
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE   (
+LOWER(username) = :LOWER(username):
+OR LOWER(email) = :LOWER(email):
+ )
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth.php(64): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->processLogin()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:39:03 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:39:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:39:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:39:03 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:41:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:41:56 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:41:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:41:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:41:56 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:42:47 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:42:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:47 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:42:50 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:42:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:50 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:42:53 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:42:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:42:53 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:45:34 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:45:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:45:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:45:34 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:45:42 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:45:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:45:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:45:42 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:46:12 --> mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:46:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:46:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:46:12 --> [Caused by] mysqli_sql_exception: Table 'newlangkah.kategori' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori`.`nama_kategori`
+FROM `materi`
+JOIN `kategori` ON `kategori`.`id` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-02 14:49:07 --> mysqli_sql_exception: Unknown column 'kategori_mapel.id_kategori' in 'on clause' in C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\LangkahPeduliNew\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`...', 0)
+#1 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`...')
+#2 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`...')
+#3 C:\xampp\htdocs\LangkahPeduliNew\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`...', Array, false)
+#4 C:\xampp\htdocs\LangkahPeduliNew\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LangkahPeduliNew\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LangkahPeduliNew\app\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LangkahPeduliNew\app\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+#8 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(933): App\Controllers\Materi->index()
+#9 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+#10 C:\xampp\htdocs\LangkahPeduliNew\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LangkahPeduliNew\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\LangkahPeduliNew\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\LangkahPeduliNew\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-12-02 14:49:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori_mapel.id_kategori' in 'on clause'
+[Method: GET, Route: dashboard/pengajar/materi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:49:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori_mapel.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+CRITICAL - 2025-12-02 14:49:07 --> [Caused by] mysqli_sql_exception: Unknown column 'kategori_mapel.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = \'1ag\'
+ORDER BY `materi`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `materi`.*, `kategori_mapel`.`nama_kategori`
+FROM `materi`
+JOIN `kategori_mapel` ON `kategori_mapel`.`id_kategori` = `materi`.`id_kategori`
+WHERE `materi`.`pengajar` = :materi.pengajar:
+ORDER BY `materi`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\MateriModel.php(38): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Materi.php(26): App\Models\MateriModel->getMateriByPengajar('1ag')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Materi->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Materi))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-02 14:58:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/dashboard_pengajar.php"
+[Method: GET, Route: dashboard/pengajar/soal/tambah/9]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/dashboard_pengajar.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('layouts/dashboard_pengajar', [], true)
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/pengajar/tambah_soal', [], true)
+ 4 APPPATH\Controllers\Soal.php(30): view('dashboard/pengajar/tambah_soal', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Soal->create('9')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Soal))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\LangkahPeduliNew\\public\\index.php')
+DEBUG - 2025-12-02 14:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 14:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,6 +1,5 @@
 <?= $this->extend('layout/dashboard_pengajar') ?>
 <?= $this->section('content') ?>
-
 <div class="container py-5">
     <h3 class="fw-bold header-gradient mb-4">Tambah Quiz</h3>
     <a href="<?= base_url('dashboard/pengajar/quiz') ?>" class="text-decoration-none mb-3 d-inline-block">&laquo; Kembali ke Daftar Quiz</a>
