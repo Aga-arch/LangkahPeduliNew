@@ -30,6 +30,7 @@ $routes->group('dashboard', function ($routes) {
 
     // Dashboard umum
     $routes->get('/', 'Dashboard::index');
+
     // Forum
     $routes->get('forum', 'Forum::index');
     $routes->get('forum/detail/(:num)', 'Forum::detail/$1');
@@ -39,6 +40,7 @@ $routes->group('dashboard', function ($routes) {
     // ADMIN
     // =========================
     $routes->group('admin', function ($routes) {
+
         $routes->get('/', 'Dashboard::admin');
 
         // Kelola Akun
@@ -57,86 +59,68 @@ $routes->group('dashboard', function ($routes) {
         $routes->get('hapus-forum/(:num)', 'ForumController::hapusForum/$1');
     });
 
-$routes->group('pengajar', function ($routes) {
-    $routes->get('/', 'Dashboard::pengajar');
+    // =========================
+    // PENGAJAR
+    // =========================
+    $routes->group('pengajar', function ($routes) {
 
-    // FIX RUTE INI
-    $routes->get('materi/semua', 'Materi::index/true');
+        $routes->get('/', 'Dashboard::pengajar');
 
-    $routes->get('materi', 'Materi::index');
+        // Materi
+        $routes->get('materi', 'Materi::index');
+        $routes->get('materi/semua', 'Materi::index/true');
+        $routes->get('materi/tambah', 'Materi::tambah');
+        $routes->post('materi/simpan', 'Materi::simpan');
+        $routes->get('materi/edit/(:num)', 'Materi::edit/$1');
+        $routes->post('materi/update/(:num)', 'Materi::update/$1');
+        $routes->get('materi/hapus/(:num)', 'Materi::hapus/$1');
 
-    $routes->get('materi/tambah', 'Materi::tambah');
-    $routes->post('materi/simpan', 'Materi::simpan');
+        // QUIZ
+        $routes->get('quiz', 'Pengajar::quiz');
+        $routes->get('quiz/tambah', 'Pengajar::tambah_quiz');
+        $routes->post('quiz/simpan', 'Quiz::simpan');
+        $routes->get('quiz/get-soal/(:num)', 'Pengajar::getSoal/$1');
+        $routes->get('quiz/edit/(:num)', 'Pengajar::quizEdit/$1');
+        $routes->post('quiz/update/(:num)', 'Pengajar::quizUpdate/$1');
+        $routes->get('quiz/detail/(:num)', 'Pengajar::quizDetail/$1');
+        $routes->get('quiz/hapus/(:num)', 'Pengajar::quizHapus/$1');
 
-    $routes->get('materi/edit/(:num)', 'Materi::edit/$1');
-    $routes->post('materi/update/(:num)', 'Materi::update/$1');
-
-    $routes->get('materi/hapus/(:num)', 'Materi::hapus/$1');
-
-    // Quiz
-// LIST QUIZ
-$routes->get('quiz', 'Pengajar::quiz');
-
-// FORM TAMBAH QUIZ
-$routes->get('quiz/tambah', 'Pengajar::tambah_quiz');
-
-// SIMPAN QUIZ BARU
-$routes->post('quiz/simpan', 'Quiz::simpan');
-
-// AMBIL SOAL
-$routes->get('quiz/get-soal/(:num)', 'Pengajar::getSoal/$1');
-
-// EDIT
-$routes->get('quiz/edit/(:num)', 'Pengajar::quizEdit/$1');
-$routes->post('quiz/update/(:num)', 'Pengajar::quizUpdate/$1');
-
-// DETAIL
-$routes->get('quiz/detail/(:num)', 'Pengajar::quizDetail/$1');
-
-// HAPUS
-$routes->get('quiz/hapus/(:num)', 'Pengajar::quizHapus/$1');
-
-
-      // Bank soal
-$routes->get('banksoal', 'Banksoal::index');
-$routes->get('banksoal/tambah', 'Banksoal::create');
-$routes->post('banksoal/simpan', 'Banksoal::store');
-
-$routes->get('banksoal/detail/(:num)', 'Banksoal::detail/$1');
-  $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
+        // BANK SOAL
+        $routes->get('banksoal', 'Banksoal::index');
+        $routes->get('banksoal/tambah', 'Banksoal::create');
+        $routes->post('banksoal/simpan', 'Banksoal::store');
+        $routes->get('banksoal/detail/(:num)', 'Banksoal::detail/$1');
+        $routes->get('banksoal/edit/(:num)', 'Banksoal::edit/$1');
         $routes->post('banksoal/update/(:num)', 'Banksoal::update/$1');
+        $routes->get('banksoal/hapus/(:num)', 'Banksoal::hapus/$1');
 
-$routes->get('banksoal/hapus/(:num)', 'Banksoal::hapus/$1');
-
-// SOAL
-$routes->get('soal/tambah/(:num)', 'Soal::create/$1');         // :num = id_banksoal
-    $routes->post('soal/simpan/(:num)', 'Soal::store/$1');        // simpan soal untuk banksoal tertentu
-    $routes->get('soal/edit/(:num)', 'Soal::edit/$1');            // edit soal
-$routes->post('soal/update/(:num)', 'Soal::update/$1'); // Update via POST
-    $routes->get('soal/delete/(:num)', 'Soal::delete/$1');        // hapus soal
-   // hapus soal
-
-});
-    // =========================
-// PENERIMA
-// =========================
-$routes->group('penerima', function ($routes) {
-
-    $routes->get('/', 'Dashboard::penerima');
-    $routes->get('mapel', 'Dashboard::daftarMapel');
-    $routes->get('cari', 'Dashboard::cariMateri');
-    $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
-    $routes->get('penghargaan', 'Penghargaan::index');
-
-});
+        // SOAL DALAM BANK SOAL
+        $routes->get('soal/tambah/(:num)', 'Soal::create/$1');  
+        $routes->post('soal/simpan/(:num)', 'Soal::store/$1');
+        $routes->get('soal/edit/(:num)', 'Soal::edit/$1');      
+        $routes->post('soal/update/(:num)', 'Soal::update/$1');
+        $routes->get('soal/delete/(:num)', 'Soal::delete/$1');
+    });
 
     // =========================
-    // QUIZ umum
+    // PENERIMA
     // =========================
-    $routes->group('quiz', function ($routes) {
-        $routes->get('/', 'Quiz::index');
-        $routes->get('start', 'Quiz::start');
-        $routes->post('submit', 'Quiz::submit');
+    $routes->group('penerima', function ($routes) {
+
+        $routes->get('/', 'Dashboard::penerima');
+
+        // Kategori Mapel
+        $routes->get('mapel', 'Dashboard::daftarMapel');
+        $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
+
+        // Detail Materi
+        $routes->get('materi/(:num)', 'Dashboard::detailMateri/$1');
+
+        // Pencarian
+        $routes->get('cari', 'Dashboard::cariMateri');
+
+        // Penghargaan
+        $routes->get('penghargaan', 'Penghargaan::index');
     });
 
     // Profil

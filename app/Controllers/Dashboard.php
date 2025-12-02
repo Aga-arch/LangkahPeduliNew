@@ -3,7 +3,10 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\MataPelajaranModel;
+use App\Models\KategoriModel;
+use App\Models\MateriModel;
+use App\Models\QuizModel;
+use App\Models\TopikModel;
 
 class Dashboard extends BaseController
 {
@@ -113,41 +116,41 @@ class Dashboard extends BaseController
     // 🎁 DASHBOARD PENERIMA
     // ============================================================
     public function penerima()
-{
-    if (!$this->isAuthorized('penerima')) {
-        return $this->accessDenied();
+    {
+        if (!$this->isAuthorized('penerima')) {
+            return $this->accessDenied();
+        }
+
+        $data = [
+            'title'    => 'Dashboard Penerima',
+            'username' => session()->get('username')
+        ];
+
+        return view('dashboard/penerima/index', $data);
     }
-
-    $data = [
-        'title'    => 'Dashboard Penerima',
-        'username' => session()->get('username')
-    ];
-
-    // ini adalah halaman utama (berisi 3 menu)
-    return view('dashboard/penerima/index', $data);
-}
-
-public function daftarMapel()
-{
-    if (!$this->isAuthorized('penerima')) {
-        return $this->accessDenied();
-    }
-
-    $mapelModel = new \App\Models\MataPelajaranModel();
-
-    $data = [
-        'title'    => 'Daftar Mata Pelajaran',
-        'username' => session()->get('username'),
-        'mapel'    => $mapelModel->orderBy('id', 'ASC')->findAll()
-    ];
-
-    // halaman daftar mapel seperti di screenshot kamu
-    return view('dashboard/penerima/daftar_mapel', $data);
-}
-
 
     // ============================================================
-    // 🔍 FITUR PENCARIAN MATA PELAJARAN
+    // 📚 DAFTAR MAPEL (KATEGORI)
+    // ============================================================
+    public function daftarMapel()
+    {
+        if (!$this->isAuthorized('penerima')) {
+            return $this->accessDenied();
+        }
+
+        $kategoriModel = new KategoriModel();
+
+        $data = [
+            'title'    => 'Daftar Mata Pelajaran',
+            'username' => session()->get('username'),
+            'mapel'    => $kategoriModel->orderBy('id', 'ASC')->findAll()
+        ];
+
+        return view('dashboard/penerima/daftar_mapel', $data);
+    }
+
+    // ============================================================
+    // 🔍 FITUR PENCARIAN MAPEL
     // ============================================================
     public function cariMateri()
     {
@@ -156,12 +159,10 @@ public function daftarMapel()
         }
 
         $keyword = $this->request->getGet('keyword');
-        $mapelModel = new MataPelajaranModel();
+        $kategoriModel = new KategoriModel();
 
-        // cari berdasarkan nama_mapel atau pengajar
-        $result = $mapelModel
-            ->like('nama_mapel', $keyword)
-            ->orLike('pengajar', $keyword)
+        $result = $kategoriModel
+            ->like('nama_kategori', $keyword)
             ->findAll();
 
         $data = [
@@ -173,6 +174,62 @@ public function daftarMapel()
 
         return view('dashboard/penerima/hasil_cari', $data);
     }
+
+    // ============================================================
+    // 📖 DETAIL MAPEL (LIST MATERI DALAM KATEGORI)
+    // ============================================================
+    public function detailMapel($id)
+    {
+        if (!$this->isAuthorized('penerima')) {
+            return $this->accessDenied();
+        }
+
+        $kategoriModel = new KategoriModel();
+        $materiModel   = new MateriModel();
+
+        $mapel = $kategoriModel->find($id);
+
+        if (!$mapel) {
+            return redirect()->to(base_url('dashboard/penerima/mapel'))
+                ->with('error', 'Mata pelajaran tidak ditemukan.');
+        }
+
+        // Ambil materi berdasarkan kategori
+        $materiList = $materiModel->where('id_kategori', $id)->findAll();
+
+        $data = [
+            'title'     => 'Detail Mata Pelajaran',
+            'username'  => session()->get('username'),
+            'mapel'     => $mapel,
+            'materiList'=> $materiList
+        ];
+
+        return view('dashboard/penerima/detail_mapel', $data);
+    }
+    public function detailMateri($id)
+{
+    if (!$this->isAuthorized('penerima')) {
+        return $this->accessDenied();
+    }
+
+    $materiModel = new \App\Models\MateriModel();
+
+    $materi = $materiModel->find($id);
+
+    if (!$materi) {
+        return redirect()->to(base_url('dashboard/penerima'))
+            ->with('error', 'Materi tidak ditemukan.');
+    }
+
+    $data = [
+        'title'    => 'Detail Materi',
+        'username' => session()->get('username'),
+        'materi'   => $materi
+    ];
+
+    return view('dashboard/penerima/detail_materi', $data);
+}
+
 
     // ============================================================
     // ⚙️ HELPER ROLE
@@ -187,37 +244,4 @@ public function daftarMapel()
         return redirect()->to(base_url('dashboard'))
             ->with('error', 'Anda tidak memiliki akses ke halaman ini.');
     }
-
-public function detailMapel($id)
-{
-    if (!$this->isAuthorized('penerima')) {
-        return $this->accessDenied();
-    }
-
-    $mapelModel = new \App\Models\MataPelajaranModel();
-    $quizModel  = new \App\Models\QuizModel();
-    $topikModel = new \App\Models\TopikModel();
-
-    $mapel = $mapelModel->find($id);
-    if (!$mapel) {
-        return redirect()->to(base_url('dashboard/penerima/mapel'))
-            ->with('error', 'Mata pelajaran tidak ditemukan.');
-    }
-
-    $quizList = $quizModel->getQuizByMapel($id);
-    $topikList = $topikModel->getTopikByMapel($id);
-
-    $data = [
-        'title'    => 'Detail Mata Pelajaran',
-        'username' => session()->get('username'),
-        'mapel'    => $mapel,
-        'quizList' => $quizList,
-        'topikList'=> $topikList
-    ];
-
-    return view('dashboard/penerima/detail_mapel', $data);
-}
-
-
-
 }

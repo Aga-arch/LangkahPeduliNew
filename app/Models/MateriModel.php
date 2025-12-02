@@ -8,18 +8,22 @@ class MateriModel extends Model
 {
     protected $table = 'materi';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id_kategori', 'judul_materi', 'isi_materi', 'file', 'pengajar', 'created_at'];
-
+    protected $allowedFields = [
+        'id_kategori',
+        'judul_materi',
+        'isi_materi',
+        'file',
+        'pengajar',
+        'created_at'
+    ];
 
     protected $useTimestamps = false;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
 
-    // Ambil semua materi dengan nama kategori
+    // Ambil semua materi + nama kategori
     public function getMateriWithKategori()
     {
-        return $this->select('materi.*, kategori_mapel.nama_kategori')
-                    ->join('kategori_mapel', 'kategori_mapel.id = materi.id_kategori')
+        return $this->select('materi.*, kategori.nama_kategori')
+                    ->join('kategori', 'kategori.id = materi.id_kategori')
                     ->orderBy('materi.id', 'DESC')
                     ->findAll();
     }
@@ -27,8 +31,8 @@ class MateriModel extends Model
     // Ambil materi milik pengajar tertentu
     public function getMateriByPengajar($pengajar)
     {
-        return $this->select('materi.*, kategori_mapel.nama_kategori')
-                    ->join('kategori_mapel', 'kategori_mapel.id = materi.id_kategori')
+        return $this->select('materi.*, kategori.nama_kategori')
+                    ->join('kategori', 'kategori.id = materi.id_kategori')
                     ->where('materi.pengajar', $pengajar)
                     ->orderBy('materi.id', 'DESC')
                     ->findAll();

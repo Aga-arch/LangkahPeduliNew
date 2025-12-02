@@ -6,7 +6,6 @@
         background-color: #f8fafc;
     }
 
-    /* Header Section */
     .welcome-section {
         background: linear-gradient(135deg, #4f46e5, #6366f1);
         color: white;
@@ -16,23 +15,19 @@
         margin-bottom: 55px;
     }
 
-    .welcome-section h2 {
-        font-weight: 700;
-    }
-
     .mapel-card {
         border: none;
         border-radius: 18px;
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease-in-out;
-        position: relative;
         background: white;
+        position: relative;
     }
 
     .mapel-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
     }
 
     .mapel-banner {
@@ -40,8 +35,8 @@
         background: linear-gradient(135deg, #4f46e5, #3b82f6);
         color: white;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         font-size: 42px;
         position: relative;
     }
@@ -50,12 +45,12 @@
         position: absolute;
         top: 10px;
         left: 10px;
-        background: rgba(255, 255, 255, 0.85);
+        background: white;
         color: #333;
-        font-size: 12px;
-        padding: 5px 10px;
+        padding: 5px 11px;
         border-radius: 8px;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 12px;
     }
 
     .mapel-body {
@@ -63,70 +58,32 @@
     }
 
     .mapel-body h5 {
-        font-weight: 600;
         color: #4f46e5;
-    }
-
-    .mapel-body p {
-        color: #555;
-        font-size: 14px;
-        min-height: 60px;
-    }
-
-    .pengajar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: #666;
-        margin-top: 12px;
-    }
-
-    .pengajar img {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        font-weight: 600;
     }
 
     .btn-detail {
         background-color: #4f46e5;
         color: white;
-        border: none;
         border-radius: 50px;
+        padding: 7px 22px;
         font-size: 14px;
         font-weight: 500;
-        padding: 7px 22px;
         margin-top: 10px;
-        transition: 0.3s;
         opacity: 0;
+        transition: 0.3s ease-in-out;
     }
 
     .mapel-card:hover .btn-detail {
         opacity: 1;
     }
-
-    .btn-detail:hover {
-        background-color: #3b34c4;
-    }
-
-    @media (max-width: 768px) {
-        .mapel-banner {
-            font-size: 32px;
-            height: 120px;
-        }
-
-        .btn-detail {
-            opacity: 1;
-        }
-    }
 </style>
 
 <div class="container py-4">
+
     <div class="welcome-section text-center">
         <h2 class="fw-bold mb-2">Selamat Datang, <?= esc($username) ?> 👋</h2>
-        <p class="mb-0">Pilih mata pelajaran di bawah untuk mulai belajar dan mengerjakan quiz.</p>
+        <p>Pilih mata pelajaran di bawah untuk mulai belajar.</p>
     </div>
 
     <h4 class="fw-bold text-center mb-4 text-primary">Daftar Mata Pelajaran</h4>
@@ -136,27 +93,32 @@
             <?php foreach ($mapel as $m): ?>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card mapel-card h-100">
+
+                        <!-- Banner -->
                         <div class="mapel-banner">
-                            <span class="badge-mapel"><?= esc($m['kode_mapel']) ?></span>
+                            <span class="badge-mapel"><?= esc($m['id']) ?></span>
                             <i class="bi bi-journal-text"></i>
                         </div>
+
+                        <!-- Body -->
                         <div class="mapel-body">
-                            <h5><?= esc($m['nama_mapel']) ?></h5>
-                            <p><?= esc($m['deskripsi']) ?></p>
-                            <div class="pengajar">
-                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Pengajar">
-                                <span><?= esc($m['pengajar']) ?></span>
-                            </div>
+                            <h5><?= esc($m['nama_kategori']) ?></h5>
+
                             <div class="text-center">
-                                <a href="<?= base_url('dashboard/penerima/mapel/' . $m['id']) ?>" class="btn btn-detail mt-3">Lihat Detail</a>
+                                <a href="<?= base_url('dashboard/penerima/mapel/' . $m['id']) ?>" 
+                                   class="btn btn-detail">
+                                   Lihat Detail
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p class="text-center text-muted">Belum ada mata pelajaran yang tersedia.</p>
+            <p class="text-center text-muted">Belum ada mata pelajaran tersedia.</p>
         <?php endif; ?>
     </div>
 </div>
+
 <?= $this->endSection() ?>
