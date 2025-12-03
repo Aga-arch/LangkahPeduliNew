@@ -297,7 +297,19 @@ function spawnKofLogo(){
     document.body.appendChild(logo);
     setTimeout(()=>{ logo.remove(); }, 8000);
 }
+function spawnKofLogo2(){
+    const logo = document.createElement('img');
+    logo.src = "<?= base_url('images/kof_logo2.png') ?>"; 
+    logo.className = 'kof-logo';
+    logo.style.left = Math.random() * (window.innerWidth - 80) + 'px';
+    logo.style.top = Math.random() * (window.innerHeight - 80) + 'px';
+    logo.style.animationDuration = (4 + Math.random()*3)+'s';
+    document.body.appendChild(logo);
+    setTimeout(()=>{ logo.remove(); }, 8000);
+}
+    
 setInterval(spawnKofLogo, 1000); // spawn logo tiap 1 detik
+setInterval(spawnKofLogo2, 1000); // spawn logo2 tiap 1 detik
 </script>
 </body>
 </html>
