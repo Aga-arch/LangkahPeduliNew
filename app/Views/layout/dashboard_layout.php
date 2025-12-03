@@ -177,7 +177,7 @@
 
 <!-- Sidebar -->
 <div class="sidebar">
-    <a href="<?= base_url('dashboard/penghargaan') ?>"><i class="bi bi-trophy me-2"></i> Penghargaan</a>
+    <a href="<?= base_url('dashboard/penerima/penghargaan') ?>"><i class="bi bi-trophy me-2"></i> Penghargaan</a>
     <a href="<?= base_url('dashboard/quiz') ?>"><i class="bi bi-question-circle me-2"></i> Quiz</a>
     <a href="<?= base_url('dashboard/forum') ?>"><i class="bi bi-chat-dots me-2"></i> Forum</a>
 </div>
