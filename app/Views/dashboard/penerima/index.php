@@ -73,7 +73,7 @@
                 <i class="bi bi-question-circle"></i>
                 <h5>Quiz</h5>
                 <p>Uji pemahamanmu melalui berbagai quiz interaktif.</p>
-                <a href="<?= base_url('dashboard/quiz') ?>" class="btn btn-go mt-2">Mulai Quiz</a>
+                <a class="btn" href="<?= base_url('dashboard/penerima/quiz') ?>">Mulai Quiz</a>
             </div>
         </div>
 

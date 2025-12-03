@@ -230,6 +230,51 @@ class Dashboard extends BaseController
     return view('dashboard/penerima/detail_materi', $data);
 }
 
+public function daftarQuizPenerima()
+{
+    $quizModel = new \App\Models\QuizModel();
+    $data['quiz'] = $quizModel->getQuizWithBank();
+
+    return view('dashboard/penerima/quiz_list', $data);
+}
+
+public function detailQuizPenerima($id)
+{
+    $quizModel = new \App\Models\QuizModel();
+    $quiz = $quizModel->find($id);
+
+    if (!$quiz) {
+        return redirect()->back()->with('error', 'Quiz tidak ditemukan.');
+    }
+
+    return view('dashboard/penerima/quiz_detail', ['quiz' => $quiz]);
+}
+public function mulaiQuiz($id)
+{
+    $quizModel = new \App\Models\QuizModel();
+    $quiz = $quizModel->find($id);
+
+    if (!$quiz) {
+        return redirect()->to('dashboard/penerima/quiz')->with('error', 'Quiz tidak ditemukan.');
+    }
+
+    // Ambil soal berdasarkan quiz_detail
+    $db = db_connect();
+    $soal = $db->table('quiz_detail')
+        ->select('soal.*')
+        ->join('soal', 'soal.id_soal = quiz_detail.id_soal')
+        ->where('quiz_detail.id_quiz', $id)
+        ->get()
+        ->getResultArray();
+
+    return view('dashboard/penerima/quiz_mulai', [
+        'quiz' => $quiz,
+        'soal' => $soal
+    ]);
+}
+
+
+
 
     // ============================================================
     // ⚙️ HELPER ROLE

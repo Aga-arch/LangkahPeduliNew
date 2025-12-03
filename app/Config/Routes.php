@@ -110,6 +110,11 @@ $routes->group('dashboard', function ($routes) {
     $routes->group('penerima', function ($routes) {
 
         $routes->get('/', 'Dashboard::penerima');
+        $routes->get('quiz', 'Dashboard::daftarQuizPenerima');
+        $routes->get('quiz/(:num)', 'Dashboard::detailQuizPenerima/$1');
+        $routes->get('quiz/mulai/(:num)', 'Dashboard::mulaiQuiz/$1');
+
+
 
         // Kategori Mapel
         $routes->get('mapel', 'Dashboard::daftarMapel');
@@ -127,4 +132,13 @@ $routes->group('dashboard', function ($routes) {
 
     // Profil
     $routes->get('profil', 'Profil::index');
+    $routes->get('profil/edit', 'Profil::edit');
+    $routes->post('profil/update', 'Profil::update');
+
+    // Profil Pengajar
+    $routes->get('pengajar/profil', 'Profil::index');
+    $routes->get('pengajar/profil/edit', 'Profil::edit');
+    $routes->post('pengajar/profil/update', 'Profil::update');
+
+
 });
