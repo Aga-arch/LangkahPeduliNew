@@ -12,34 +12,68 @@ class Auth extends BaseController
     }
 
     public function saveRegister()
-    {
-        $userModel = new UserModel();
-        $username = trim($this->request->getPost('username'));
-        $email = trim($this->request->getPost('email'));
-        $password = $this->request->getPost('password');
-        $role = $this->request->getPost('role');
+{
+    $userModel = new UserModel();
+    $username = trim($this->request->getPost('username'));
+    $email = trim($this->request->getPost('email'));
+    $password = $this->request->getPost('password');
+    $role = $this->request->getPost('role');
 
-        if (empty($username) || empty($email) || empty($password) || empty($role)) {
-            return redirect()->back()->with('error', 'Semua kolom wajib diisi.');
-        }
-
-        if ($role === 'admin') {
-            return redirect()->back()->with('error', 'Role admin tidak dapat didaftarkan.');
-        }
-
-        if ($userModel->where('email', $email)->orWhere('username', $username)->first()) {
-            return redirect()->back()->with('error', 'Username atau email sudah terdaftar.');
-        }
-
-        $userModel->insert([
-            'username' => $username,
-            'email'    => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-            'role'     => $role
-        ]);
-
-        return redirect()->to('login')->with('success', 'Pendaftaran berhasil. Silakan login.');
+    if (empty($username) || empty($email) || empty($password) || empty($role)) {
+        return redirect()->back()->with('error', 'Semua kolom wajib diisi.');
     }
+
+    if ($role === 'admin') {
+        return redirect()->back()->with('error', 'Role admin tidak dapat didaftarkan.');
+    }
+
+    if ($userModel->where('email', $email)->orWhere('username', $username)->first()) {
+        return redirect()->back()->with('error', 'Username atau email sudah terdaftar.');
+    }
+
+    // ===============================
+    // VALIDASI PASSWORD
+    // ===============================
+
+    // Minimal 8 karakter
+    if (strlen($password) < 8) {
+        return redirect()->back()->with('error', 'Password minimal 8 karakter.');
+    }
+
+    // Wajib huruf besar
+    if (!preg_match('/[A-Z]/', $password)) {
+        return redirect()->back()->with('error', 'Password harus mengandung huruf besar.');
+    }
+
+    // Wajib huruf kecil
+    if (!preg_match('/[a-z]/', $password)) {
+        return redirect()->back()->with('error', 'Password harus mengandung huruf kecil.');
+    }
+
+    // Wajib angka
+    if (!preg_match('/[0-9]/', $password)) {
+        return redirect()->back()->with('error', 'Password harus mengandung angka.');
+    }
+
+    // Wajib karakter unik !@#$%^&*
+    if (!preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password)) {
+        return redirect()->back()->with('error', 'Password harus mengandung karakter unik seperti ! @ # $ %.');
+    }
+
+    // ===============================
+    // SIMPAN KE DATABASE
+    // ===============================
+
+    $userModel->insert([
+        'username' => $username,
+        'email'    => $email,
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+        'role'     => $role
+    ]);
+
+    return redirect()->to('login')->with('success', 'Pendaftaran berhasil. Silakan login.');
+}
+
 
     public function login()
     {
