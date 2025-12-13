@@ -113,6 +113,8 @@ $routes->group('dashboard', function ($routes) {
         $routes->get('quiz', 'Dashboard::daftarQuizPenerima');
         $routes->get('quiz/(:num)', 'Dashboard::detailQuizPenerima/$1');
         $routes->get('quiz/mulai/(:num)', 'Dashboard::mulaiQuiz/$1');
+        $routes->post('quiz/kumpul/(:num)', 'Dashboard::kumpulkanJawaban/$1');
+
 
 
 
