@@ -9,307 +9,211 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-body { font-family: "Poppins", sans-serif; margin:0; background:#0a0f2c; color:#fff; overflow-x:hidden; }
-* { box-sizing:border-box; }
+/* ================= THEME VARIABLE ================= */
+:root {
+    --bg-main:#0f172a;
+    --bg-header:#1e293b;
+    --bg-sidebar:#020617;
+    --bg-card:#020617;
+    --text-main:#e5e7eb;
+    --text-muted:#94a3b8;
+    --accent:#3b82f6;
+}
+
+body.light {
+    --bg-main:#f8fafc;
+    --bg-header:#ffffff;
+    --bg-sidebar:#f1f5f9;
+    --bg-card:#ffffff;
+    --text-main:#0f172a;
+    --text-muted:#64748b;
+    --accent:#2563eb;
+}
+
+/* ================= BASE ================= */
+body {
+    font-family:"Poppins",sans-serif;
+    margin:0;
+    background:var(--bg-main);
+    color:var(--text-main);
+    transition:.3s;
+}
 
 /* ================= HEADER ================= */
 header {
-    background: linear-gradient(90deg,#1976d2,#42a5f5);
-    color:white;
-    padding:15px 25px;
+    background:var(--bg-header);
+    padding:14px 24px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:fixed;
-    top:0; left:0; right:0;
+    top:0;left:0;right:0;
     z-index:100;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
-header:hover { background: linear-gradient(90deg,#42a5f5,#1976d2); }
-.logo-area { display:flex; align-items:center; }
-.logo-area img { height:60px; width:auto; margin-right:15px; object-fit:contain; transition: transform 0.3s; }
-.logo-area img:hover { transform: rotate(10deg) scale(1.05); }
-header a { color:white; text-decoration:none; margin-left:15px; transition: 0.3s; }
-header a:hover { text-decoration:underline; color:#ffeb3b; }
-.btn-logout { background:#ff4d4f; border:none; padding:6px 15px; border-radius:20px; color:white; transition:0.3s; }
-.btn-logout:hover { background:#d9363e; transform: scale(1.05); }
+
+.logo-area {
+    display:flex;
+    align-items:center;
+}
+
+.logo-area img {
+    height:48px;
+    margin-right:12px;
+}
+
+header h1 {
+    font-size:18px;
+    margin:0;
+}
+
+header a {
+    color:var(--text-main);
+    text-decoration:none;
+    margin-left:16px;
+    font-size:14px;
+}
+
+header a:hover {
+    color:var(--accent);
+}
+
+/* ================= TOGGLE BUTTON ================= */
+.theme-btn {
+    background:none;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    border-radius:6px;
+    padding:5px 10px;
+    font-size:14px;
+    margin-left:12px;
+}
+
+.theme-btn:hover {
+    background:var(--accent);
+    color:white;
+}
 
 /* ================= SIDEBAR ================= */
 .sidebar {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 220px;
-    height: calc(100vh - 70px);
-    background: rgba(10,15,44,0.95);
-    box-shadow: 2px 0 15px rgba(0,0,0,0.5);
-    padding-top: 20px;
-    z-index:50;
-    backdrop-filter: blur(6px);
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    height:calc(100vh - 70px);
+    background:var(--bg-sidebar);
+    padding-top:16px;
 }
+
 .sidebar a {
     display:block;
     padding:12px 20px;
-    color:#fff;
+    color:var(--text-main);
     text-decoration:none;
-    border-left:3px solid transparent;
-    transition: all 0.3s;
     font-weight:500;
-    position:relative;
+    font-size:14px;
+    border-left: 3px solid transparent;
+    transition: .3s;
 }
-.sidebar a::before {
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:5px;
-    height:100%;
-    background: linear-gradient(180deg,#42a5f5,#1976d2);
-    border-radius: 0 5px 5px 0;
-    opacity:0;
-    transition: 0.3s;
+
+.sidebar a:hover,
+.sidebar a.active {
+    background:rgba(59,130,246,.15);
+    color:var(--accent);
+    border-left: 3px solid var(--accent);
 }
-.sidebar a:hover::before { opacity:1; }
-.sidebar a:hover { color:#42a5f5; }
-.sidebar a i { margin-right:8px; transition:0.3s; }
-.sidebar a:hover i { transform: scale(1.2) rotate(20deg); }
 
 /* ================= CONTENT ================= */
 .content {
-    margin-left: 240px;
-    margin-top: 90px;
-    padding: 25px;
-    position: relative;
-    z-index: 10;
+    margin-left:240px;
+    margin-top:90px;
+    padding:24px;
 }
 
-/* ================= PIXEL HEARTS ================= */
-.pixel-heart {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: red;
-    clip-path: polygon(50% 0%, 61% 12%, 75% 12%, 85% 24%, 85% 40%, 75% 55%, 50% 80%, 25% 55%, 15% 40%, 15% 24%, 25% 12%, 39% 12%);
-    opacity:0.8;
-    animation: floatHeart linear infinite;
-    transition: transform 0.3s;
-}
-.pixel-heart.explode { transform: scale(2) rotate(360deg); opacity:0; }
-@keyframes floatHeart {
-    0% { transform: translateY(0) scale(0.8); opacity:0; }
-    20% { opacity:1; }
-    100% { transform: translateY(-200px) scale(1.2); opacity:0; }
+/* ================= CARD ================= */
+.card {
+    background:var(--bg-card);
+    border:none;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
 
-/* ================= POTION PARTICLE EFFECT ================= */
-.potion-particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius:50%;
-    background: linear-gradient(45deg,#8e44ad,#e74c3c);
-    opacity:0.6;
-    animation: floatPotion linear infinite;
-}
-@keyframes floatPotion {
-    0% { transform: translateY(0) scale(0.5); opacity:0.5; }
-    50% { transform: translateY(-50px) scale(1); opacity:0.9; }
-    100% { transform: translateY(-120px) scale(0.8); opacity:0; }
+.text-muted {
+    color:var(--text-muted)!important;
 }
 
-/* ================= KOF STRIKE EFFECT ================= */
-.kof-strike {
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    background: linear-gradient(90deg, #fff700,#ff0000);
-    clip-path: polygon(0 0,100% 0,80% 100%,0% 100%);
-    opacity:0;
-    transform: rotate(-15deg);
-    animation: strikeEffect 0.8s ease-out forwards;
-}
-@keyframes strikeEffect {
-    0% { opacity:0; transform: translateX(0px) rotate(-15deg) scale(0); }
-    50% { opacity:1; transform: translateX(50px) rotate(-15deg) scale(1.2); }
-    100% { opacity:0; transform: translateX(100px) rotate(-15deg) scale(1); }
+/* ================= BUTTON ================= */
+.btn-primary {
+    background:var(--accent);
+    border:none;
 }
 
-/* ================= CURSOR NEON ================= */
-.cursor-hover {
-    position:absolute;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    pointer-events:none;
-    background: linear-gradient(45deg,#42a5f5,#1976d2,#ffffff);
-    box-shadow: 0 0 8px #42a5f5,0 0 16px #1976d2,0 0 24px #ffffff;
-    opacity:0.8;
-    animation: floatCursor 1s infinite alternate;
+.btn-primary:hover {
+    opacity:.9;
 }
-@keyframes floatCursor {
-    0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-4px) scale(1.3); }
-    100% { transform: translateY(0) scale(1); }
-}
-
-/* ================= BUTTON & CARD EFFECT ================= */
-.btn-primary, .btn-success, .btn-warning, .btn-danger {
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-.btn-primary:hover, .btn-success:hover, .btn-warning:hover, .btn-danger:hover {
-    transform: scale(1.08) rotate(-1deg);
-    box-shadow: 0 0 18px rgba(66,165,245,0.8);
-}
-.btn-primary::after, .btn-success::after, .btn-warning::after, .btn-danger::after {
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0; left:-100%;
-    background: rgba(255,255,255,0.2);
-    transition: all 0.5s;
-}
-.btn-primary:hover::after, .btn-success:hover::after, .btn-warning:hover::after, .btn-danger:hover::after {
-    left:0;
-}
-.card { transition: transform 0.5s ease, box-shadow 0.5s ease; }
-.card:hover { transform: translateY(-5px) scale(1.03); box-shadow:0 15px 35px rgba(66,165,245,0.6); }
-
-/* ================= KOF LOGO FLOATING ================= */
-.kof-logo {
-    position: absolute;
-    width: 80px;
-    height: auto;
-    opacity:0.7;
-    animation: floatLogo linear infinite;
-}
-@keyframes floatLogo {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-50px) rotate(15deg); }
-    100% { transform: translateY(0) rotate(0deg); }
-}
-
 </style>
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
     <div class="logo-area">
-        <img src="<?= base_url('../images/Logo.png') ?>" alt="Logo">
-        <h1><i class="bi bi-person-badge-fill me-2"></i>Hallo <?= esc(session()->get('username')) ?></h1>
+        <img src="<?= base_url('images/Logo.png') ?>" alt="Logo">
+        <h1>Dashboard Pengajar</h1>
     </div>
+
     <div class="d-flex align-items-center">
-        <a href="<?= base_url('dashboard/profil') ?>"><i class="bi bi-person-circle me-1"></i><?= session()->get('username') ?></a>
-        <a href="<?= base_url('logout') ?>" class="btn-logout"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
+        <button class="theme-btn" onclick="toggleTheme()">
+            <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+        <a href="<?= base_url('dashboard/profil') ?>">
+            <i class="bi bi-person-circle me-1"></i>
+            <?= esc(session()->get('username')) ?>
+        </a>
+
+        <a href="<?= base_url('logout') ?>" class="btn btn-danger btn-sm ms-3">
+            <i class="bi bi-box-arrow-right me-1"></i> Logout
+        </a>
     </div>
 </header>
 
+<?php $page = $page ?? ''; ?>
 <div class="sidebar">
-    <a href="<?= base_url('dashboard/pengajar/materi') ?>"><i class="bi bi-calendar2-fill me-2"></i>Kelola Materi</a>
-    <a href="<?= base_url('dashboard/pengajar/quiz') ?>"><i class="bi bi-journal-text me-2"></i>Kelola Quiz</a>
-    <a href="<?= base_url('dashboard/pengajar/banksoal') ?>"><i class="bi bi-collection me-2"></i>Kelola Bank Soal</a>
-    <div id="heartContainer" style="position:absolute; bottom:10px; width:100%;"></div>
+    <a href="<?= base_url('dashboard/pengajar/materi') ?>" class="<?= ($page=='materi') ? 'active' : '' ?>">
+        <i class="bi bi-journal-text me-2"></i> Kelola Materi
+    </a>
+    <a href="<?= base_url('dashboard/pengajar/quiz') ?>" class="<?= ($page=='quiz') ? 'active' : '' ?>">
+        <i class="bi bi-ui-checks me-2"></i> Kelola Quiz
+    </a>
+    <a href="<?= base_url('dashboard/pengajar/banksoal') ?>" class="<?= ($page=='banksoal') ? 'active' : '' ?>">
+        <i class="bi bi-collection me-2"></i> Bank Soal
+    </a>
 </div>
 
-<div id="potionContainer"></div>
+
+<!-- ================= CONTENT ================= -->
 <div class="content">
     <?= $this->renderSection('content') ?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-// ================= PIXEL HEARTS =================
-const heartContainer = document.getElementById('heartContainer');
-for(let i=0;i<30;i++){
-    const heart=document.createElement('div');
-    heart.className='pixel-heart';
-    heart.style.left=Math.random()*180+'px';
-    heart.style.animationDuration=(2+Math.random()*3)+'s';
-    heart.style.animationDelay=(Math.random()*2)+'s';
-    heartContainer.appendChild(heart);
+/* ================= THEME TOGGLE ================= */
+function toggleTheme() {
+    document.body.classList.toggle('light');
+    localStorage.setItem(
+        'theme',
+        document.body.classList.contains('light') ? 'light' : 'dark'
+    );
 }
 
-// Explode hearts on sidebar hover
-document.querySelectorAll('.sidebar a').forEach(a=>{
-    a.addEventListener('mouseenter', ()=>{
-        const hearts = document.querySelectorAll('.pixel-heart');
-        hearts.forEach(h=>{
-            h.classList.add('explode');
-            setTimeout(()=>{ h.classList.remove('explode'); },300);
-        });
-    });
-});
-
-// ================= POTION PARTICLE =================
-const potionContainer = document.getElementById('potionContainer');
-for(let i=0;i<50;i++){
-    const p=document.createElement('div');
-    p.className='potion-particle';
-    p.style.left=Math.random()*window.innerWidth+'px';
-    p.style.top=Math.random()*window.innerHeight+'px';
-    p.style.background = `hsl(${Math.random()*360},80%,60%)`;
-    p.style.animationDuration=(2+Math.random()*3)+'s';
-    p.style.animationDelay=(Math.random()*2)+'s';
-    potionContainer.appendChild(p);
+// Load saved theme
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
 }
-
-// ================= KOF STRIKE EFFECT =================
-function kofStrike() {
-    const strike = document.createElement('div');
-    strike.className='kof-strike';
-    strike.style.top=(100 + Math.random()*400)+'px';
-    strike.style.left=(-200 + Math.random()*200)+'px';
-    document.body.appendChild(strike);
-    // Shake effect
-    strike.animate([
-        {transform:'translateX(0px) rotate(-15deg)'},
-        {transform:'translateX(5px) rotate(-15deg)'},
-        {transform:'translateX(-5px) rotate(-15deg)'},
-        {transform:'translateX(0px) rotate(-15deg)'}
-    ], {duration:200, iterations:3});
-    setTimeout(()=>{ strike.remove(); },1000);
-}
-setInterval(kofStrike,5000);
-
-// ================= CURSOR NEON =================
-document.addEventListener('mousemove', e=>{
-    for(let i=0;i<2;i++){
-        const cursor = document.createElement('div');
-        cursor.className='cursor-hover';
-        cursor.style.left=(e.clientX + Math.random()*4 -2)+'px';
-        cursor.style.top=(e.clientY + Math.random()*4 -2)+'px';
-        document.body.appendChild(cursor);
-        setTimeout(()=>{ cursor.remove(); },700);
-    }
-});
-
-// ================= KOF LOGO FLOATING =================
-function spawnKofLogo(){
-    const logo = document.createElement('img');
-    logo.src = "<?= base_url('../images/kof_logo.png') ?>"; // ganti dengan logo KOF
-    logo.className = 'kof-logo';
-    logo.style.left = Math.random() * (window.innerWidth - 80) + 'px';
-    logo.style.top = Math.random() * (window.innerHeight - 80) + 'px';
-    logo.style.animationDuration = (4 + Math.random()*3)+'s';
-    document.body.appendChild(logo);
-    setTimeout(()=>{ logo.remove(); }, 8000);
-}
-function spawnKofLogo2(){
-    const logo = document.createElement('img');
-    logo.src = "<?= base_url('images/kof_logo2.png') ?>"; 
-    logo.className = 'kof-logo';
-    logo.style.left = Math.random() * (window.innerWidth - 80) + 'px';
-    logo.style.top = Math.random() * (window.innerHeight - 80) + 'px';
-    logo.style.animationDuration = (4 + Math.random()*3)+'s';
-    document.body.appendChild(logo);
-    setTimeout(()=>{ logo.remove(); }, 8000);
-}
-    
-setInterval(spawnKofLogo, 1000); // spawn logo tiap 1 detik
-setInterval(spawnKofLogo2, 1000); // spawn logo2 tiap 1 detik
 </script>
+
 </body>
 </html>
