@@ -40,22 +40,23 @@ class Mapel extends BaseController
 
         return view('dashboard/penerima/detailMapel', $data);
     }
+
     public function cari()
-{
-    $keyword = $this->request->getGet('keyword');
+    {
+        $keyword = $this->request->getGet('keyword');
 
-    $mapel = $this->materiModel
-        // PERBAIKAN DI SINI: Tambahkan materi.isi_materi dan materi.id
-        ->select('materi.id, materi.judul_materi, materi.isi_materi, materi.pengajar, kategori_mapel.nama_kategori') 
-        ->join('kategori_mapel', 'kategori_mapel.id = materi.id_kategori')
-        ->like('materi.judul_materi', $keyword)
-        ->orLike('materi.isi_materi', $keyword)
-        ->orLike('kategori_mapel.nama_kategori', $keyword)
-        ->findAll();
+        $mapel = $this->materiModel
+            // TAMBAHAN: id_kategori diperlukan untuk link tombol 'Lihat'
+            ->select('materi.id, materi.id_kategori, materi.judul_materi, materi.isi_materi, materi.pengajar, kategori_mapel.nama_kategori') 
+            ->join('kategori_mapel', 'kategori_mapel.id = materi.id_kategori')
+            ->like('materi.judul_materi', $keyword)
+            ->orLike('materi.isi_materi', $keyword)
+            ->orLike('kategori_mapel.nama_kategori', $keyword)
+            ->findAll();
 
-    return view('dashboard/penerima/hasil_cari', [
-        'keyword' => $keyword,
-        'mapel'   => $mapel
-    ]);
-}
+        return view('dashboard/penerima/hasil_cari', [
+            'keyword' => $keyword,
+            'mapel'   => $mapel
+        ]);
     }
+}

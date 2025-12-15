@@ -112,12 +112,13 @@ $routes->group('dashboard', function ($routes) {
         $routes->get('/', 'Dashboard::penerima');
 
         // PERBAIKAN PENTING: Tambahkan 'Penerima\' karena file ada di subfolder
-        $routes->get('cari', 'Penerima\Mapel::cari'); 
+        $routes->get('cari', 'Mapel::cari');
 
         // Kategori Mapel
         $routes->get('mapel', 'Dashboard::daftarMapel');
         $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
         $routes->get('materi/(:num)', 'Dashboard::detailMateri/$1');
+        $routes->get('cari', 'PenerimaController::cari');
         
         // Quiz Penerima
         // URL akses: localhost:8080/dashboard/penerima/quiz
