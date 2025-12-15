@@ -110,25 +110,24 @@ $routes->group('dashboard', function ($routes) {
     $routes->group('penerima', function ($routes) {
 
         $routes->get('/', 'Dashboard::penerima');
-        $routes->get('quiz', 'Dashboard::daftarQuizPenerima');
-        $routes->get('quiz/(:num)', 'Dashboard::detailQuizPenerima/$1');
-        $routes->get('quiz/mulai/(:num)', 'Dashboard::mulaiQuiz/$1');
-        $routes->post('quiz/kumpul/(:num)', 'Dashboard::kumpulkanJawaban/$1');
 
-
-
+        // PERBAIKAN PENTING: Tambahkan 'Penerima\' karena file ada di subfolder
+        $routes->get('cari', 'Penerima\Mapel::cari'); 
 
         // Kategori Mapel
         $routes->get('mapel', 'Dashboard::daftarMapel');
         $routes->get('mapel/(:num)', 'Dashboard::detailMapel/$1');
-
-        // Detail Materi
         $routes->get('materi/(:num)', 'Dashboard::detailMateri/$1');
+        
+        // Quiz Penerima
+        // URL akses: localhost:8080/dashboard/penerima/quiz
+        $routes->group('quiz', function($routes){
+            $routes->get('/', 'Dashboard::daftarQuizPenerima');
+            $routes->get('(:num)', 'Dashboard::detailQuizPenerima/$1'); // URL: quiz/1
+            $routes->get('mulai/(:num)', 'Dashboard::mulaiQuiz/$1');
+            $routes->post('kumpul/(:num)', 'Dashboard::kumpulkanJawaban/$1');
+        });
 
-        // Pencarian
-        $routes->get('cari', 'Dashboard::cariMateri');
-
-        // Penghargaan
         $routes->get('penghargaan', 'Penghargaan::index');
     });
 

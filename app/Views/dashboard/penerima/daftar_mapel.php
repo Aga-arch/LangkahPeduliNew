@@ -1,21 +1,40 @@
 <?= $this->extend('layout/layout_penerima') ?>
 
 <?= $this->section('content') ?>
-<style>
-    body {
-        background-color: #f8fafc;
-    }
 
+<?php
+// LOGIKA TAMBAHAN:
+// Cek apakah halaman ini dibuka hasil pencarian atau daftar biasa
+$isSearch = isset($keyword) && !empty($keyword);
+$dataMapel = $isSearch ? $mapel : (isset($mapel) ? $mapel : []); // Pastikan variabel data aman
+?>
+
+<style>
+    /* Styling Dasar */
+    body { background-color: #f8fafc; }
+
+    /* Header Welcome (Untuk Tampilan Biasa) */
     .welcome-section {
         background: linear-gradient(135deg, #4f46e5, #6366f1);
         color: white;
         border-radius: 18px;
         padding: 50px 25px;
         box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
-        margin-bottom: 55px;
+        margin-bottom: 40px;
     }
 
-    .mapel-card {
+    /* Header Pencarian (Untuk Tampilan Hasil Cari) */
+    .search-header {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
+        border-radius: 18px;
+        padding: 40px 25px;
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        margin-bottom: 40px;
+    }
+
+    /* Kartu Materi/Mapel */
+    .result-card {
         border: none;
         border-radius: 18px;
         overflow: hidden;
@@ -23,100 +42,173 @@
         transition: all 0.3s ease-in-out;
         background: white;
         position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
-    .mapel-card:hover {
+    .result-card:hover {
         transform: translateY(-6px);
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
     }
 
-    .mapel-banner {
-        height: 140px;
+    .result-banner {
+        height: 120px;
         background: linear-gradient(135deg, #4f46e5, #3b82f6);
         color: white;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 42px;
+        font-size: 36px;
         position: relative;
     }
 
-    .badge-mapel {
+    /* Badge Label */
+    .badge-kategori {
         position: absolute;
         top: 10px;
         left: 10px;
-        background: white;
-        color: #333;
-        padding: 5px 11px;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 12px;
-    }
-
-    .mapel-body {
-        padding: 20px;
-    }
-
-    .mapel-body h5 {
+        background: rgba(255, 255, 255, 0.9);
         color: #4f46e5;
-        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .result-body {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .result-title {
+        color: #4f46e5;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 5px;
+        line-height: 1.3;
+    }
+
+    .result-pengajar {
+        font-size: 13px;
+        color: #64748b;
+        margin-bottom: 15px;
     }
 
     .btn-detail {
         background-color: #4f46e5;
         color: white;
         border-radius: 50px;
-        padding: 7px 22px;
+        padding: 8px 25px;
         font-size: 14px;
         font-weight: 500;
-        margin-top: 10px;
+        margin-top: auto;
         opacity: 0;
-        transition: 0.3s ease-in-out;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        display: inline-block;
     }
 
-    .mapel-card:hover .btn-detail {
+    .result-card:hover .btn-detail {
         opacity: 1;
+        transform: translateY(0);
     }
 </style>
 
 <div class="container py-4">
 
-    <div class="welcome-section text-center">
-        <h2 class="fw-bold mb-2">Selamat Datang, <?= esc($username) ?> 👋</h2>
-        <p>Pilih mata pelajaran di bawah untuk mulai belajar.</p>
-    </div>
+    <?php if ($isSearch): ?>
+        
+        <div class="search-header text-center">
+            <h2 class="fw-bold mb-2">Hasil Pencarian</h2>
+            <p class="mb-0">
+                Menampilkan hasil untuk kata kunci: 
+                <span style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 5px; font-weight: bold;">
+                    "<?= esc($keyword) ?>"
+                </span>
+            </p>
+            <a href="<?= base_url('dashboard/penerima/mapel') ?>" class="btn btn-sm btn-outline-light mt-3 rounded-pill">
+                Reset Pencarian
+            </a>
+        </div>
 
-    <h4 class="fw-bold text-center mb-4 text-primary">Daftar Mata Pelajaran</h4>
+    <?php else: ?>
+
+        <div class="welcome-section text-center">
+            <h2 class="fw-bold mb-2">Selamat Datang, <?= esc($username ?? 'Pengguna') ?> 👋</h2>
+            <p>Pilih mata pelajaran di bawah untuk mulai belajar.</p>
+        </div>
+        <h4 class="fw-bold text-center mb-4 text-primary">Daftar Mata Pelajaran</h4>
+
+    <?php endif; ?>
+
 
     <div class="row g-4">
-        <?php if (!empty($mapel)): ?>
-            <?php foreach ($mapel as $m): ?>
+        <?php if (!empty($dataMapel)): ?>
+            <?php foreach ($dataMapel as $m): ?>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card mapel-card h-100">
-
-                        <!-- Banner -->
-                        <div class="mapel-banner">
-                            <span class="badge-mapel"><?= esc($m['id']) ?></span>
+                    
+                    <div class="card result-card">
+                        
+                        <div class="result-banner">
+                            <?php if (isset($m['nama_kategori'])): ?>
+                                <span class="badge-kategori">
+                                    <i class="bi bi-tag-fill me-1"></i> <?= esc($m['nama_kategori']) ?>
+                                </span>
+                            <?php endif; ?>
+                            
                             <i class="bi bi-journal-text"></i>
                         </div>
 
-                        <!-- Body -->
-                        <div class="mapel-body">
-                            <h5><?= esc($m['nama_kategori']) ?></h5>
+                        <div class="result-body text-center">
+                            
+                            <div class="result-title">
+                                <?= esc($m['judul_materi'] ?? $m['nama_kategori'] ?? 'Tanpa Judul') ?>
+                            </div>
 
-                            <div class="text-center">
-                                <a href="<?= base_url('dashboard/penerima/mapel/' . $m['id']) ?>" 
-                                   class="btn btn-detail">
-                                   Lihat Detail
+                            <?php if (isset($m['pengajar'])): ?>
+                                <div class="result-pengajar">
+                                    <i class="bi bi-person-circle"></i> <?= esc($m['pengajar']) ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <div>
+                                <?php 
+                                    $link = $isSearch 
+                                        ? base_url('dashboard/penerima/materi/' . ($m['id'] ?? '#')) 
+                                        : base_url('dashboard/penerima/mapel/' . ($m['id'] ?? '#'));
+                                    
+                                    $label = $isSearch ? "Baca Materi" : "Lihat Mapel";
+                                ?>
+
+                                <a href="<?= $link ?>" class="btn btn-detail">
+                                   <?= $label ?>
                                 </a>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
+
                 </div>
             <?php endforeach; ?>
+
         <?php else: ?>
-            <p class="text-center text-muted">Belum ada mata pelajaran tersedia.</p>
+            
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-search" style="font-size: 50px; color: #cbd5e1; display: block; margin-bottom: 20px;"></i>
+                <h4 class="text-secondary">Data tidak ditemukan</h4>
+                <?php if ($isSearch): ?>
+                    <p class="text-muted">Coba gunakan kata kunci lain.</p>
+                <?php else: ?>
+                    <p class="text-muted">Belum ada mata pelajaran tersedia.</p>
+                <?php endif; ?>
+            </div>
+
         <?php endif; ?>
     </div>
 </div>

@@ -40,18 +40,29 @@ class Dashboard extends BaseController
     // 👑 DASHBOARD ADMIN
     // ============================================================
     public function admin()
-    {
-        if (!$this->isAuthorized('admin')) {
-            return $this->accessDenied();
-        }
+{
+    // 1. Panggil Model
+    // Asumsi Anda punya UserModel (untuk tabel users) dan ForumModel (untuk tabel forum)
+    // Jika belum punya UserModel, gunakan db connect biasa
+    $db = \Config\Database::connect();
+    
+    // Hitung Total Pengguna (dari tabel 'users' atau 'pengguna')
+    $totalUsers = $db->table('users')->countAllResults(); 
+    // ^ Ganti 'users' dengan nama tabel pengguna di database Anda
 
-        $data = [
-            'title'    => 'Dashboard Admin',
-            'username' => session()->get('username')
-        ];
+    // Hitung Total Forum
+    $totalForum = $db->table('forum')->countAllResults();
 
-        return view('dashboard/admin/index', $data);
-    }
+    $data = [
+        'title'    => 'Dashboard Admin',
+        'username' => session()->get('username'),
+        // Kirim data hitungan ke View
+        'total_users' => $totalUsers,
+        'total_forum' => $totalForum
+    ];
+
+    return view('dashboard/admin/index', $data);
+}
 
     // ============================================================
     // 🎓 DASHBOARD PENGAJAR

@@ -1,102 +1,171 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'Dashboard Admin'; ?></title>
 
-    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            --bg-body: #f3f6f9;
+            --sidebar-width: 260px;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --hover-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
-            margin: 0;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-body);
+            color: #344767;
+            overflow-x: hidden;
         }
-        header {
-            background: linear-gradient(90deg, #0d47a1, #1976d2);
-            color: white;
-            padding: 15px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-        header h1 { font-size: 22px; font-weight: 600; }
-        .btn-logout {
-            background: #ff4d4f;
-            border: none;
-            padding: 6px 15px;
-            border-radius: 20px;
-            color: white;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .btn-logout:hover { background: #d9363e; }
+
+        /* === SIDEBAR === */
         .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--primary-gradient);
             position: fixed;
-            top: 70px;
-            left: 0;
-            width: 220px;
-            height: calc(100vh - 70px);
-            background: white;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.05);
-            padding-top: 20px;
+            top: 0; left: 0; z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.05);
         }
-        .sidebar a {
-            display: block;
-            padding: 12px 20px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .sidebar a:hover {
-            background: #e3f2fd;
-            color: #1976d2;
-        }
-        .content {
-            margin-left: 240px;
-            margin-top: 90px;
+
+        .sidebar-brand {
             padding: 25px;
+            font-size: 20px; font-weight: 700; color: white;
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            padding: 14px 25px;
+            display: flex; align-items: center; gap: 15px;
+            font-size: 0.95rem; font-weight: 500;
+            transition: 0.3s; margin: 4px 12px;
+            border-radius: 10px; text-decoration: none;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white; transform: translateX(5px);
+        }
+
+        /* === MAIN CONTENT === */
+        .main-wrapper {
+            margin-left: var(--sidebar-width);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 100vh; display: flex; flex-direction: column;
+        }
+
+        /* === HEADER === */
+        .top-header {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            height: 80px; padding: 0 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 999;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+        }
+
+        #sidebarToggle {
+            background: transparent; border: none; font-size: 24px; color: #1976d2;
+            cursor: pointer; transition: 0.3s;
+        }
+        #sidebarToggle:hover { transform: scale(1.1); color: #0d47a1; }
+
+        .user-dropdown .dropdown-toggle {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #344767; font-weight: 600;
+        }
+        .user-avatar {
+            width: 40px; height: 40px; background: #e3f2fd; color: #1976d2;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+
+        .content-body { padding: 30px; flex-grow: 1; }
+
+        /* === LOGIKA TOGGLE SIDEBAR === */
+        body.sidebar-closed .sidebar { margin-left: calc(-1 * var(--sidebar-width)); }
+        body.sidebar-closed .main-wrapper { margin-left: 0; }
+
+        @media (max-width: 768px) {
+            .sidebar { margin-left: calc(-1 * var(--sidebar-width)); }
+            .main-wrapper { margin-left: 0; }
+            body.sidebar-open .sidebar { margin-left: 0; }
         }
     </style>
 </head>
+
 <body>
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <i class="bi bi-layers-fill"></i> ADMIN PANEL
+        </div>
+        <div class="py-3">
+            <small class="text-uppercase px-4 text-white-50 fw-bold" style="font-size: 11px;">Utama</small>
+            <a href="<?= base_url('dashboard/admin') ?>" class="nav-link mt-2 active">
+                <i class="bi bi-grid-fill"></i> Dashboard
+            </a>
+            
+            <small class="text-uppercase px-4 text-white-50 fw-bold mt-4 d-block" style="font-size: 11px;">Manajemen</small>
+            <a href="<?= base_url('dashboard/admin/kelola-akun') ?>" class="nav-link">
+                <i class="bi bi-people-fill"></i> Kelola Akun
+            </a>
+            <a href="<?= base_url('dashboard/admin/kelola-forum') ?>" class="nav-link">
+                <i class="bi bi-chat-dots-fill"></i> Kelola Forum
+            </a>
+        </div>
+    </nav>
 
-<header>
-    <div>
-        <h1><i class="bi bi-shield-lock-fill me-2"></i> Dashboard Admin</h1>
+    <div class="main-wrapper">
+        <header class="top-header">
+            <div class="d-flex align-items-center">
+                <button id="sidebarToggle"><i class="bi bi-list"></i></button>
+                <h5 class="mb-0 ms-3 fw-bold text-primary d-none d-md-block">Dashboard Overview</h5>
+            </div>
+
+            <div class="dropdown user-dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <div class="text-end me-2 d-none d-md-block">
+                        <small class="d-block text-muted" style="font-size: 11px;">Administrator</small>
+                        <span><?= session()->get('username') ?></span>
+                    </div>
+                    <div class="user-avatar"><i class="bi bi-person-fill"></i></div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow mt-2">
+                    <li><a class="dropdown-item text-danger" href="<?= base_url('logout') ?>"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <?= $this->renderSection('content') ?>
+        </div>
     </div>
-    <div class="d-flex align-items-center">
-        <span class="me-3 fw-semibold">
-            <i class="bi bi-person-circle me-1"></i>
-            <?= session()->get('username') ?>
-        </span>
-        <a href="<?= base_url('logout') ?>" class="btn-logout">
-            <i class="bi bi-box-arrow-right me-1"></i> Logout
-        </a>
-    </div>
-</header>
 
-<div class="sidebar">
-    <a href="<?= base_url('dashboard/admin') ?>"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-    <a href="<?= base_url('dashboard/admin/kelola-akun') ?>"><i class="bi bi-people-fill me-2"></i> Kelola Akun</a>
-    <a href="<?= base_url('dashboard/admin/kelola-forum') ?>"><i class="bi bi-chat-text-fill me-2"></i> Kelola Forum</a>
-</div>
-
-<div class="content">
-    <?= $this->renderSection('content') ?>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const body = document.body;
+        
+        toggleBtn.addEventListener('click', () => {
+            if (window.innerWidth > 768) {
+                body.classList.toggle('sidebar-closed');
+            } else {
+                body.classList.toggle('sidebar-open');
+            }
+        });
+    </script>
 </body>
 </html>

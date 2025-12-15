@@ -70,10 +70,10 @@
         <!-- Quiz -->
         <div class="col-md-4">
             <div class="menu-card h-100">
-                <i class="bi bi-question-circle"></i>
+                <i class="bi bi-chat-text"></i>
                 <h5>Quiz</h5>
                 <p>Uji pemahamanmu melalui berbagai quiz interaktif.</p>
-                <a class="btn" href="<?= base_url('dashboard/penerima/quiz') ?>">Mulai Quiz</a>
+                <a href="<?= base_url('dashboard/penerima/quiz') ?>" class="btn btn-go mt-2">Mulai Quiz</a>
             </div>
         </div>
 
